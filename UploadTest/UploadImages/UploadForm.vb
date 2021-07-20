@@ -16,8 +16,9 @@ Public Class UploadForm
 
         'oculta la primer cplumna de DataGriew
         dtUpload.Columns(0).Visible = False
+        GridView1.Columns(0).Visible = False
 
-        'para mostrar la fecha en el form
+        'para mostrar la fecha en el formulario
         lbFecha.Text = saveUcnow.ToString("dd/MM/yyyy")
 
         'inserta un check en el grid
@@ -26,9 +27,10 @@ Public Class UploadForm
 
     Public Sub Load_grid()
         dtUpload.DataSource = Logica.listadoImagenes
+        GridControlListar.DataSource = Logica.listadoImagenes
     End Sub
 
-    Private Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         guardararchivo()
     End Sub
 
@@ -39,11 +41,11 @@ Public Class UploadForm
 
     'Limpiar cajas de texto
     Public Sub Limpiar()
-        txtPl_name.Clear()
-        txtRuta.Clear()
+        txtPl_name.Text = ""
+        txtRuta.Text = ""
     End Sub
 
-    Private Sub txtPl_name_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPl_name.KeyPress
+    Private Sub txtPl_name_KeyPress(sender As Object, e As KeyPressEventArgs)
         validarLetrasyNumeros(e)
     End Sub
 
@@ -56,9 +58,9 @@ Public Class UploadForm
         End If
     End Sub
 
-    'Evento boton Editar
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        editararchivo()
+    'Evento boton Actualizar
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        actualizararchivo()
     End Sub
 
     'Evento boton Eliminar
@@ -85,10 +87,10 @@ Public Class UploadForm
     End Sub
 
     'metodo para pasar parametros editar archivo
-    Sub editararchivo()
+    Sub actualizararchivo()
         Dim obj As New Entidades.EntUpload()
 
-        obj.id = txtid.Text
+        obj.id = txtId.Text
         obj.nombre = txtPl_name.Text
         obj.fecha = saveUcnow
         obj.ruta = txtRuta.Text
@@ -101,7 +103,9 @@ Public Class UploadForm
     Sub eliminararchivo()
         Dim obj As New Entidades.EntUpload()
 
-        obj.id = txtid.Text
+        'Dim Eli As Integer
+        'txtId.Text = GridView1.GetSelectedRows(Eli)
+        obj.id = txtId.Text
         Logica.eliminarImagenes(obj)
         Me.Load_grid()
         Me.Limpiar()
@@ -146,7 +150,7 @@ Public Class UploadForm
             For Each row As DataGridViewRow In dtUpload.Rows
                 If row.Index = e.RowIndex Then
                     row.Cells("checkBoxColumn").Value = Not Convert.ToBoolean(row.Cells("checkBoxColumn").EditedFormattedValue)
-                    txtid.Text = row.Cells(1).Value.ToString()
+                    txtId.Text = row.Cells(1).Value.ToString()
                     txtPl_name.Text = row.Cells(2).Value.ToString()
                 Else
                     row.Cells("checkBoxColumn").Value = False
@@ -154,4 +158,5 @@ Public Class UploadForm
             Next
         End If
     End Sub
+
 End Class

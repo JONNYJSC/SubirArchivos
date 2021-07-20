@@ -1,7 +1,6 @@
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\bin\Debug\Entidades.dll
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\bin\Debug\Entidades.pdb
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\bin\Debug\Entidades.xml
-C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.Resources.resources
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.cache
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache

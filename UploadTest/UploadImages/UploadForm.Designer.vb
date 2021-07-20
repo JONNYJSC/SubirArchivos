@@ -24,7 +24,6 @@ Partial Class UploadForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dtUpload = New System.Windows.Forms.DataGridView()
         Me.lbFecha = New System.Windows.Forms.Label()
         Me.txtId = New DevExpress.XtraEditors.TextEdit()
         Me.txtPl_name = New DevExpress.XtraEditors.TextEdit()
@@ -36,7 +35,6 @@ Partial Class UploadForm
         Me.SqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource(Me.components)
         Me.GridControlListar = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        CType(Me.dtUpload, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtId.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPl_name.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRuta.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,15 +51,6 @@ Partial Class UploadForm
         Me.Label1.Size = New System.Drawing.Size(67, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Nombre:"
-        '
-        'dtUpload
-        '
-        Me.dtUpload.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dtUpload.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtUpload.Location = New System.Drawing.Point(12, 99)
-        Me.dtUpload.Name = "dtUpload"
-        Me.dtUpload.Size = New System.Drawing.Size(426, 164)
-        Me.dtUpload.TabIndex = 3
         '
         'lbFecha
         '
@@ -133,10 +122,10 @@ Partial Class UploadForm
         '
         'GridControlListar
         '
-        Me.GridControlListar.Location = New System.Drawing.Point(13, 343)
+        Me.GridControlListar.Location = New System.Drawing.Point(13, 97)
         Me.GridControlListar.MainView = Me.GridView1
         Me.GridControlListar.Name = "GridControlListar"
-        Me.GridControlListar.Size = New System.Drawing.Size(425, 200)
+        Me.GridControlListar.Size = New System.Drawing.Size(425, 177)
         Me.GridControlListar.TabIndex = 17
         Me.GridControlListar.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -150,7 +139,7 @@ Partial Class UploadForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(450, 636)
+        Me.ClientSize = New System.Drawing.Size(450, 316)
         Me.Controls.Add(Me.GridControlListar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnActualizar)
@@ -160,12 +149,10 @@ Partial Class UploadForm
         Me.Controls.Add(Me.txtPl_name)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.lbFecha)
-        Me.Controls.Add(Me.dtUpload)
         Me.Controls.Add(Me.Label1)
         Me.Name = "UploadForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formulario"
-        CType(Me.dtUpload, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtId.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPl_name.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRuta.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -176,7 +163,6 @@ Partial Class UploadForm
 
     End Sub
     Friend WithEvents Label1 As Label
-    Friend WithEvents dtUpload As DataGridView
     Friend WithEvents lbFecha As Label
     Friend WithEvents txtId As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txtPl_name As DevExpress.XtraEditors.TextEdit

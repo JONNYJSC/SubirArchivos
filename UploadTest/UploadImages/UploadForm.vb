@@ -15,18 +15,13 @@ Public Class UploadForm
         Me.Load_grid()
 
         'oculta la primer cplumna de DataGriew
-        dtUpload.Columns(0).Visible = False
         GridView1.Columns(0).Visible = False
 
         'para mostrar la fecha en el formulario
         lbFecha.Text = saveUcnow.ToString("dd/MM/yyyy")
-
-        'inserta un check en el grid
-        Me.dataGrid()
     End Sub
 
     Public Sub Load_grid()
-        dtUpload.DataSource = Logica.listadoImagenes
         GridControlListar.DataSource = Logica.listadoImagenes
     End Sub
 
@@ -103,22 +98,15 @@ Public Class UploadForm
     Sub eliminararchivo()
         Dim obj As New Entidades.EntUpload()
 
-        'Dim Eli As Integer
-        'txtId.Text = GridView1.GetSelectedRows(Eli)
-        obj.id = txtId.Text
+        Dim row As DataRow
+        row = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+        Dim id As Integer
+        id = row("id")
+        GridView1.DeleteRow(GridView1.FocusedRowHandle)
+        obj.id = id
         Logica.eliminarImagenes(obj)
         Me.Load_grid()
         Me.Limpiar()
-    End Sub
-
-    'Agrega una columna de check al dataGrid
-    Public Sub dataGrid()
-        Dim checkBoxColumn As DataGridViewCheckBoxColumn = New DataGridViewCheckBoxColumn()
-        checkBoxColumn.HeaderText = "Check" 'nombre
-        checkBoxColumn.Width = 50 'tamaño
-        checkBoxColumn.Name = "checkBoxColumn"
-        dtUpload.Columns.Insert(0, checkBoxColumn)
-        AddHandler dtUpload.CellContentClick, AddressOf dtUpload_CellContentClick
     End Sub
 
     'abre los archivos del equipo
@@ -143,20 +131,6 @@ Public Class UploadForm
         notificacion.Delay = 2000
         notificacion.ButtonBorderColor = Color.Blue
         notificacion.Popup()
-    End Sub
-
-    Private Sub dtUpload_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtUpload.CellContentClick
-        If e.RowIndex >= 0 AndAlso e.ColumnIndex = 0 Then
-            For Each row As DataGridViewRow In dtUpload.Rows
-                If row.Index = e.RowIndex Then
-                    row.Cells("checkBoxColumn").Value = Not Convert.ToBoolean(row.Cells("checkBoxColumn").EditedFormattedValue)
-                    txtId.Text = row.Cells(1).Value.ToString()
-                    txtPl_name.Text = row.Cells(2).Value.ToString()
-                Else
-                    row.Cells("checkBoxColumn").Value = False
-                End If
-            Next
-        End If
     End Sub
 
 End Class

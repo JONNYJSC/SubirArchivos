@@ -133,4 +133,7 @@ Public Class UploadForm
         notificacion.Popup()
     End Sub
 
+    Private Sub GridControlListar_MouseClick(sender As Object, e As MouseEventArgs) Handles GridControlListar.MouseClick
+        txtPl_name.Text = GridView1.GetRowCellValue(0, "nombre")
+    End Sub
 End Class

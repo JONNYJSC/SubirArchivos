@@ -23,6 +23,7 @@ Partial Class UploadForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbFecha = New System.Windows.Forms.Label()
         Me.txtId = New DevExpress.XtraEditors.TextEdit()
@@ -122,6 +123,8 @@ Partial Class UploadForm
         '
         'GridControlListar
         '
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridControlListar.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.GridControlListar.Location = New System.Drawing.Point(13, 97)
         Me.GridControlListar.MainView = Me.GridView1
         Me.GridControlListar.Name = "GridControlListar"

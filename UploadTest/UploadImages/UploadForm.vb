@@ -133,7 +133,12 @@ Public Class UploadForm
         notificacion.Popup()
     End Sub
 
+    'posicion de seleccion del datagrid para traer el nombre en la caja de texto
     Private Sub GridControlListar_MouseClick(sender As Object, e As MouseEventArgs) Handles GridControlListar.MouseClick
-        txtPl_name.Text = GridView1.GetRowCellValue(0, "nombre")
+        Dim row As DataRow
+        row = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+        Dim nombre As String
+        nombre = row("nombre")
+        txtPl_name.Text = nombre
     End Sub
 End Class

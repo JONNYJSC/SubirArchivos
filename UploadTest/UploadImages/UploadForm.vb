@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
+Imports DevExpress.XtraEditors.Repository
 Imports Logica
 Imports Tulpep.NotificationWindow
 
@@ -8,14 +9,17 @@ Public Class UploadForm
     Dim saveUcnow As DateTime = DateTime.Now
 
     Private Sub FormUpload_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSet2.SP_ListarArchivos' table. You can move, or remove it, as needed.
+        'TODO: This line of code loads data into the 'DataSet1.tb_Archivo' table. You can move, or remove it, as needed.
+        Me.Tb_ArchivoTableAdapter.Fill(Me.DataSet1.tb_Archivo)
         'desactiva la caja de texto de la ruta de los archivos
         txtRuta.Enabled = False
 
         'Carga el griedView
-        Me.Load_grid()
+        'Me.Load_grid()
 
         'oculta la primer cplumna de DataGriew
-        GridView1.Columns(0).Visible = False
+        'GridView1.Columns(0).Visible = False
 
         'para mostrar la fecha en el formulario
         lbFecha.Text = saveUcnow.ToString("dd/MM/yyyy")
@@ -85,8 +89,16 @@ Public Class UploadForm
     Sub actualizararchivo()
         Dim obj As New Entidades.EntUpload()
 
-        obj.id = txtId.Text
-        obj.nombre = txtPl_name.Text
+        Dim row As DataRow
+        row = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+        Dim id As Integer
+        id = row("id")
+        GridView1.DeleteRow(GridView1.FocusedRowHandle)
+        obj.id = id
+
+        obj.id = id
+        'obj.nombre = txtPl_name.Text
+        obj.nombre = txt_name.Name
         obj.fecha = saveUcnow
         obj.ruta = txtRuta.Text
         Logica.editarImagenes(obj)
@@ -137,8 +149,12 @@ Public Class UploadForm
     Private Sub GridControlListar_MouseClick(sender As Object, e As MouseEventArgs) Handles GridControlListar.MouseClick
         Dim row As DataRow
         row = GridView1.GetDataRow(GridView1.FocusedRowHandle)
-        Dim nombre As String
+        Dim nombre, fecha As String
         nombre = row("nombre")
+        fecha = row("fecha")
+
         txtPl_name.Text = nombre
+        lbFecha.Text = fecha
     End Sub
+
 End Class

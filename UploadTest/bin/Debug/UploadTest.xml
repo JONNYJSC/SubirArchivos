@@ -112,6 +112,131 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member>
+<member name="T:UploadTest.CompaniaDataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_CategotiaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_OrdenDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_RegistroDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.SP_ListarArchivosRegistroDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_CategotiaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_OrdenRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_RegistroRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.SP_ListarArchivosRegistroRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_CategotiaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_OrdenRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.tb_RegistroRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1.SP_ListarArchivosRegistroRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.tb_CategotiaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.tb_OrdenTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.tb_RegistroTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.SP_ListarArchivosRegistroTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(UploadTest.CompaniaDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(UploadTest.CompaniaDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(UploadTest.CompaniaDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.UpdateAll(UploadTest.CompaniaDataSet1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:UploadTest.CompaniaDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 <member name="T:UploadTest.DataSet1">
 <summary>
 Represents a strongly typed in-memory cache of data.

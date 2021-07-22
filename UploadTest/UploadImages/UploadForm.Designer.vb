@@ -22,6 +22,7 @@ Partial Class UploadForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbFecha = New System.Windows.Forms.Label()
@@ -33,7 +34,7 @@ Partial Class UploadForm
         Me.btnActualizar = New DevExpress.XtraEditors.SimpleButton()
         Me.btnGuardar = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControlListar = New DevExpress.XtraGrid.GridControl()
-        Me.TbArchivoBindingSource = New System.Windows.Forms.BindingSource()
+        Me.TbArchivoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet1 = New UploadTest.DataSet1()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.col_Id = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -43,11 +44,12 @@ Partial Class UploadForm
         Me.col_Fecha = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.DateEdit = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
         Me.txt_archivo = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
-        Me.SPListarArchivosBindingSource = New System.Windows.Forms.BindingSource()
+        Me.SPListarArchivosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.Tb_ArchivoTableAdapter = New UploadTest.DataSet1TableAdapters.tb_ArchivoTableAdapter()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.btnfrm = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.txtId.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPl_name.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRuta.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -173,6 +175,7 @@ Partial Class UploadForm
         Me.GridView1.GridControl = Me.GridControlListar
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow
+        Me.GridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click
         Me.GridView1.OptionsEditForm.BindingMode = DevExpress.XtraGrid.Views.Grid.EditFormBindingMode.Direct
         Me.GridView1.OptionsFind.AlwaysVisible = True
         Me.GridView1.OptionsView.ColumnAutoWidth = False
@@ -246,6 +249,7 @@ Partial Class UploadForm
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.btnfrm)
         Me.PanelControl1.Controls.Add(Me.txtRuta)
         Me.PanelControl1.Controls.Add(Me.Label1)
         Me.PanelControl1.Controls.Add(Me.btnGuardar)
@@ -267,6 +271,7 @@ Partial Class UploadForm
         '
         'GridControl1
         '
+        Me.GridControl1.DataSource = Me.SPListarArchivosBindingSource
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Right
         Me.GridControl1.Location = New System.Drawing.Point(462, 100)
         Me.GridControl1.MainView = Me.GridView2
@@ -280,6 +285,14 @@ Partial Class UploadForm
         Me.GridView2.GridControl = Me.GridControl1
         Me.GridView2.Name = "GridView2"
         '
+        'btnfrm
+        '
+        Me.btnfrm.Location = New System.Drawing.Point(545, 13)
+        Me.btnfrm.Name = "btnfrm"
+        Me.btnfrm.Size = New System.Drawing.Size(75, 23)
+        Me.btnfrm.TabIndex = 17
+        Me.btnfrm.Text = "Button"
+        '
         'UploadForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,7 +304,6 @@ Partial Class UploadForm
         Me.Name = "UploadForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formulario"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.txtId.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPl_name.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRuta.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -338,4 +350,5 @@ Partial Class UploadForm
     Friend WithEvents SPListarArchivosBindingSource As BindingSource
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents btnfrm As DevExpress.XtraEditors.SimpleButton
 End Class

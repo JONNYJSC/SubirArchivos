@@ -157,4 +157,7 @@ Public Class UploadForm
         lbFecha.Text = fecha
     End Sub
 
+    Private Sub btnfrm_Click(sender As Object, e As EventArgs) Handles btnfrm.Click
+        FrmRegistroArchivo.ShowDialog()
+    End Sub
 End Class

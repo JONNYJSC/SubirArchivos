@@ -1,4 +1,6 @@
-﻿Public Class FrmCategoria
+﻿Imports DevExpress.XtraBars.Docking
+
+Public Class FrmCategoria
     Private Sub FrmCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Load_grid()
     End Sub
@@ -31,4 +33,14 @@
         guardarCategoria()
     End Sub
 
+    'Agrega un panel al lado izquierdo
+    Private Sub btnPanel_Click(sender As Object, e As EventArgs) Handles btnPanel.Click
+        ' Create a dock manager
+        Dim dm As DockManager = New DockManager
+        ' Specify the form to which the dock panels will be added
+        dm.Form = Me
+        ' Create a new panel and dock it to the left edge of the form
+        Dim dp1 As DockPanel = dm.AddPanel(DockingStyle.Left)
+        dp1.Text = "Panel 1"
+    End Sub
 End Class

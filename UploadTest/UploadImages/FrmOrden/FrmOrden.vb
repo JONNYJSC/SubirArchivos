@@ -9,11 +9,11 @@ Public Class FrmOrden
     End Sub
     'metodo seleccion del combobox
     Sub seleccion()
-        Dim pos, pos2 As Integer
-        pos = ComboboxCategoria.TabIndex
+        'Dim pos, pos2 As Integer
+        'pos = ComboboxCategoria.TabIndex
         Dim name As String
         name = ComboboxCategoria.Text
-        pos2 = ComboboxCategoria.GetSelectedDataRow()
+        'pos2 = ComboboxCategoria.GetSelectedDataRow()
     End Sub
 
     Private Sub btnGuardarOrden_Click(sender As Object, e As EventArgs) Handles btnGuardarOrden.Click

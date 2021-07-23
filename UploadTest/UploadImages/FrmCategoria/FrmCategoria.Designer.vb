@@ -47,6 +47,8 @@ Partial Class FrmCategoria
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
+        Me.btnPanel = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.txtCategoria.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,10 +66,12 @@ Partial Class FrmCategoria
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
+        CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.btnPanel)
         Me.PanelControl1.Controls.Add(Me.txtCategoria)
         Me.PanelControl1.Controls.Add(Me.btnAgregarCategoria)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
@@ -281,8 +285,20 @@ Partial Class FrmCategoria
         'XtraTabPage2
         '
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(294, 272)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(354, 660)
         Me.XtraTabPage2.Text = "XtraTabPage2"
+        '
+        'XtraTabbedMdiManager1
+        '
+        Me.XtraTabbedMdiManager1.MdiParent = Me
+        '
+        'btnPanel
+        '
+        Me.btnPanel.Location = New System.Drawing.Point(454, 32)
+        Me.btnPanel.Name = "btnPanel"
+        Me.btnPanel.Size = New System.Drawing.Size(75, 23)
+        Me.btnPanel.TabIndex = 4
+        Me.btnPanel.Text = "Panel"
         '
         'FrmCategoria
         '
@@ -296,6 +312,7 @@ Partial Class FrmCategoria
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
+        Me.IsMdiContainer = True
         Me.Name = "FrmCategoria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Formulario Categoria"
@@ -317,6 +334,7 @@ Partial Class FrmCategoria
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
+        CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -349,4 +367,6 @@ Partial Class FrmCategoria
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XtraTabbedMdiManager1 As DevExpress.XtraTabbedMdi.XtraTabbedMdiManager
+    Friend WithEvents btnPanel As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -9,9 +9,6 @@ Public Class UploadForm
     Dim saveUcnow As DateTime = DateTime.Now
 
     Private Sub FormUpload_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataSet2.SP_ListarArchivos' table. You can move, or remove it, as needed.
-        'TODO: This line of code loads data into the 'DataSet1.tb_Archivo' table. You can move, or remove it, as needed.
-        Me.Tb_ArchivoTableAdapter.Fill(Me.DataSet1.tb_Archivo)
         'desactiva la caja de texto de la ruta de los archivos
         txtRuta.Enabled = False
 

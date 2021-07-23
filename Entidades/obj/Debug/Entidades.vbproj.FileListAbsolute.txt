@@ -7,3 +7,4 @@ C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.vbpr
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.dll
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.xml
 C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Developer-12\source\repos\UploadTest\Entidades\obj\Debug\Entidades.vbprojAssemblyReference.cache

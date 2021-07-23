@@ -7,11 +7,9 @@ C:\Users\Developer-12\source\repos\UploadTest\Logica\bin\Debug\AccesoDatos.pdb
 C:\Users\Developer-12\source\repos\UploadTest\Logica\bin\Debug\AccesoDatos.xml
 C:\Users\Developer-12\source\repos\UploadTest\Logica\bin\Debug\Entidades.pdb
 C:\Users\Developer-12\source\repos\UploadTest\Logica\bin\Debug\Entidades.xml
-C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbprojAssemblyReference.cache
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.Resources.resources
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbproj.GenerateResource.cache
-C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbproj.CoreCompileInputs.cache
-C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbproj.CopyComplete
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.dll
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.xml
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.pdb
+C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbprojResolveAssemblyReference.cache

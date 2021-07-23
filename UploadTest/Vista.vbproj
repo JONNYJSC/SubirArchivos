@@ -117,25 +117,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompaniaDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CompaniaDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CompaniaDataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CompaniaDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -147,10 +133,33 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="DataSet\SP_ListarCategoria.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP_ListarCategoria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UploadImages\FrmCategoria\FrmCategoria.Designer.vb">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UploadImages\FrmCategoria\FrmCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadImages\FrmOrden\FrmOrden.Designer.vb">
+      <DependentUpon>FrmOrden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UploadImages\FrmOrden\FrmOrden.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UploadImages\FrmRegistroArchivo.Designer.vb">
       <DependentUpon>FrmRegistroArchivo.vb</DependentUpon>
     </Compile>
     <Compile Include="UploadImages\FrmRegistroArchivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadImages\FrmPrincipal.Designer.vb">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UploadImages\FrmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UploadImages\UploadForm.Designer.vb">
@@ -168,47 +177,23 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UploadImages\FrmCategoria\FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadImages\FrmOrden\FrmOrden.resx">
+      <DependentUpon>FrmOrden.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UploadImages\FrmRegistroArchivo.resx">
       <DependentUpon>FrmRegistroArchivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadImages\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UploadImages\UploadForm.resx">
       <DependentUpon>UploadForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CompaniaDataSet.xsc">
-      <DependentUpon>CompaniaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CompaniaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CompaniaDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CompaniaDataSet.xss">
-      <DependentUpon>CompaniaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CompaniaDataSet1.xsc">
-      <DependentUpon>CompaniaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="CompaniaDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CompaniaDataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CompaniaDataSet1.xss">
-      <DependentUpon>CompaniaDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -220,6 +205,17 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="DataSet\SP_ListarCategoria.xsc">
+      <DependentUpon>SP_ListarCategoria.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\SP_ListarCategoria.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SP_ListarCategoria.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\SP_ListarCategoria.xss">
+      <DependentUpon>SP_ListarCategoria.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.vbproj">
@@ -250,5 +246,6 @@
       <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

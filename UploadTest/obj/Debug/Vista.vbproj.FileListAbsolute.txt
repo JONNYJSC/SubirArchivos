@@ -331,6 +331,9 @@ C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\de\DevExpress
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\es\DevExpress.XtraPdfViewer.v15.1.resources.dll
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\ja\DevExpress.XtraPdfViewer.v15.1.resources.dll
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\ru\DevExpress.XtraPdfViewer.v15.1.resources.dll
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.FrmRegistroArchivo.resources
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.FrmPrincipal.resources
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.FrmCategoria.resources
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\EnvDTE.xml
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
@@ -351,4 +354,4 @@ C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\Microsoft.Vis
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\VSLangProj2.xml
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\Vista.vbprojResolveAssemblyReference.cache
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\Vista.vbproj.UploadTest.exe.config
-C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.FrmRegistroArchivo.resources
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.FrmOrden.resources

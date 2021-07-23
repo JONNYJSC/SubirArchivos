@@ -3,6 +3,7 @@
     Private _nombre As String
     Private _fecha As Date
     Private _ruta As String
+    Private _Categoria As String
 
     Public Property id As Integer
         Get
@@ -41,5 +42,14 @@
     End Property
 
     Public result As Integer
+
+    Public Property Categoria As String
+        Get
+            Return _Categoria
+        End Get
+        Set(value As String)
+            _Categoria = value
+        End Set
+    End Property
 
 End Class

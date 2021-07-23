@@ -15,4 +15,13 @@ Public Module UploadImagesBIL
         Return UploadImagesDAL.eliminarArchivos(obj)
     End Function
 
+    '--------------------------------------------------------------------
+    Public Function guardadoCategoria(obj As Entidades.EntUpload) As Entidades.EntUpload
+        Return UploadImagesDAL.guardarCategoria(obj)
+    End Function
+
+    Public Function listadoCategoriaCombo() As DataTable
+        Return UploadImagesDAL.cargarCategoriaCombobox
+    End Function
+
 End Module

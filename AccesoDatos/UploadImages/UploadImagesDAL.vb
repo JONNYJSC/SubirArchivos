@@ -83,4 +83,39 @@ Public Module UploadImagesDAL
 
         Return obj
     End Function
+
+    '-------------------------------------------------------------------------------
+    Public Function guardarCategoria(obj As Entidades.EntUpload) As Entidades.EntUpload
+        Try
+            Using cnn As New SqlConnection(devServerConnectionStr)
+                Dim cmm As New SqlCommand("SP_nuevaCategoria", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                cmm.Parameters.AddWithValue("@Nombre_Categoria", obj.Categoria)
+                cnn.Open()
+                obj.result = cmm.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return obj
+    End Function
+
+    Public Function cargarCategoriaCombobox() As DataTable
+        Dim datosTablaArchivos As DataTable
+        Try
+            Dim sqlda As SqlDataAdapter
+            Dim cnn = New SqlConnection(devServerConnectionStr)
+            Dim cmm As New SqlCommand("SP_ListarCategoria", cnn)
+            cmm.CommandType = CommandType.StoredProcedure
+            sqlda = New SqlDataAdapter(cmm)
+            datosTablaArchivos = New DataTable("tb_Categoria")
+            sqlda.Fill(datosTablaArchivos)
+            cmm.Parameters.Clear()
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return datosTablaArchivos
+    End Function
 End Module

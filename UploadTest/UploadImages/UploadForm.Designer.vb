@@ -35,7 +35,6 @@ Partial Class UploadForm
         Me.btnGuardar = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControlListar = New DevExpress.XtraGrid.GridControl()
         Me.TbArchivoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet1 = New UploadTest.DataSet1()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.col_Id = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.txt_Id = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
@@ -46,7 +45,6 @@ Partial Class UploadForm
         Me.txt_archivo = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.SPListarArchivosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.Tb_ArchivoTableAdapter = New UploadTest.DataSet1TableAdapters.tb_ArchivoTableAdapter()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.btnfrm = New DevExpress.XtraEditors.SimpleButton()
@@ -55,7 +53,6 @@ Partial Class UploadForm
         CType(Me.txtRuta.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlListar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbArchivoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_Id, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_name, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,12 +158,9 @@ Partial Class UploadForm
         'TbArchivoBindingSource
         '
         Me.TbArchivoBindingSource.DataMember = "tb_Archivo"
-        Me.TbArchivoBindingSource.DataSource = Me.DataSet1
         '
         'DataSet1
         '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GridView1
         '
@@ -267,7 +261,6 @@ Partial Class UploadForm
         '
         'Tb_ArchivoTableAdapter
         '
-        Me.Tb_ArchivoTableAdapter.ClearBeforeFill = True
         '
         'GridControl1
         '
@@ -309,7 +302,6 @@ Partial Class UploadForm
         CType(Me.txtRuta.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlListar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbArchivoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_Id, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_name, System.ComponentModel.ISupportInitialize).EndInit()
@@ -344,9 +336,7 @@ Partial Class UploadForm
     Friend WithEvents DateEdit As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents txt_archivo As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
     Friend WithEvents txt_Id As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
-    Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents TbArchivoBindingSource As BindingSource
-    Friend WithEvents Tb_ArchivoTableAdapter As DataSet1TableAdapters.tb_ArchivoTableAdapter
     Friend WithEvents SPListarArchivosBindingSource As BindingSource
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView

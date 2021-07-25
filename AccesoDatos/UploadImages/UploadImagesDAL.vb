@@ -102,12 +102,12 @@ Public Module UploadImagesDAL
         Return obj
     End Function
 
-    Public Function cargarCategoriaCombobox() As DataTable
+    Public Function cargarCategoria() As DataTable
         Dim datosTablaArchivos As DataTable
         Try
             Dim sqlda As SqlDataAdapter
             Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarCategoria", cnn)
+            Dim cmm As New SqlCommand("SP_ListarCategorias", cnn)
             cmm.CommandType = CommandType.StoredProcedure
             sqlda = New SqlDataAdapter(cmm)
             datosTablaArchivos = New DataTable("tb_Categoria")
@@ -118,4 +118,40 @@ Public Module UploadImagesDAL
         End Try
         Return datosTablaArchivos
     End Function
+
+    Public Function guardarOrdenCat(obj As Entidades.EntUpload) As Entidades.EntUpload
+        Try
+            Using cnn As New SqlConnection(devServerConnectionStr)
+                Dim cmm As New SqlCommand("SP_nuevaOrden", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                cmm.Parameters.AddWithValue("@Nombre_Orden", obj.Orden)
+                cmm.Parameters.AddWithValue("@Id_Categoria", obj.IdCategoriaOrden)
+                cnn.Open()
+                obj.result = cmm.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return obj
+    End Function
+
+    Public Function cargarOrdenCategoria() As DataTable
+        Dim datosTablaArchivos As DataTable
+        Try
+            Dim sqlda As SqlDataAdapter
+            Dim cnn = New SqlConnection(devServerConnectionStr)
+            Dim cmm As New SqlCommand("SP_ListarOrdenCategoria", cnn)
+            cmm.CommandType = CommandType.StoredProcedure
+            sqlda = New SqlDataAdapter(cmm)
+            datosTablaArchivos = New DataTable("tb_Orden")
+            sqlda.Fill(datosTablaArchivos)
+            cmm.Parameters.Clear()
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return datosTablaArchivos
+    End Function
+
 End Module

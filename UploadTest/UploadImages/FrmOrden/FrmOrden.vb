@@ -1,7 +1,7 @@
 ﻿
 Public Class FrmOrden
     Private Sub FrmOrden_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboboxCategoria.Properties.DataSource = Logica.listadoCategoriaCombo
+        'ComboboxCategoria.Properties.DataSource = Logica.listadoCategoriaCombo
         ComboboxCategoria.Properties.DisplayMember = "Nombre_Categoria"
         ComboboxCategoria.Properties.ValueMember = "Id_Categoria"
 

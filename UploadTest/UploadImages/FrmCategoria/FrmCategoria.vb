@@ -25,8 +25,7 @@ Public Class FrmCategoria
     End Sub
 
     Sub Load_grid()
-        'TODO: This line of code loads data into the 'SP_ListarCategoria._SP_ListarCategoria' table. You can move, or remove it, as needed.
-        Me.SP_ListarCategoriaTableAdapter.Fill(Me.SP_ListarCategoria._SP_ListarCategoria)
+
     End Sub
 
     Private Sub btnAgregarCategoria_Click(sender As Object, e As EventArgs) Handles btnAgregarCategoria.Click

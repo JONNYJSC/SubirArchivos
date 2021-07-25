@@ -25,9 +25,7 @@ Partial Class FrmCategoria
         Me.btnAgregarCategoria = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.SPListarOrdenBindingSource = New System.Windows.Forms.BindingSource()
-        Me.SP_ListarCategoria = New UploadTest.SP_ListarCategoria()
         Me.SPListarCategoriaBindingSource = New System.Windows.Forms.BindingSource()
-        Me.SP_ListarCategoriaTableAdapter = New UploadTest.SP_ListarCategoriaTableAdapters.SP_ListarCategoriaTableAdapter()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colNombre_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -53,7 +51,6 @@ Partial Class FrmCategoria
         Me.PanelControl1.SuspendLayout()
         CType(Me.txtCategoria.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPListarOrdenBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SP_ListarCategoria, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPListarCategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,20 +109,10 @@ Partial Class FrmCategoria
         'SPListarOrdenBindingSource
         '
         Me.SPListarOrdenBindingSource.DataMember = "SP_ListarOrden"
-        '
-        'SP_ListarCategoria
-        '
-        Me.SP_ListarCategoria.DataSetName = "SP_ListarCategoria"
-        Me.SP_ListarCategoria.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
+
         'SPListarCategoriaBindingSource
         '
         Me.SPListarCategoriaBindingSource.DataMember = "SP_ListarCategoria"
-        Me.SPListarCategoriaBindingSource.DataSource = Me.SP_ListarCategoria
-        '
-        'SP_ListarCategoriaTableAdapter
-        '
-        Me.SP_ListarCategoriaTableAdapter.ClearBeforeFill = True
         '
         'GridControl1
         '
@@ -321,7 +308,6 @@ Partial Class FrmCategoria
         Me.PanelControl1.PerformLayout()
         CType(Me.txtCategoria.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPListarOrdenBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SP_ListarCategoria, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SPListarCategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -345,9 +331,7 @@ Partial Class FrmCategoria
     Friend WithEvents btnAgregarCategoria As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SPListarOrdenBindingSource As BindingSource
     Friend WithEvents txtCategoria As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SP_ListarCategoria As SP_ListarCategoria
     Friend WithEvents SPListarCategoriaBindingSource As BindingSource
-    Friend WithEvents SP_ListarCategoriaTableAdapter As SP_ListarCategoriaTableAdapters.SP_ListarCategoriaTableAdapter
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colNombre_Categoria As DevExpress.XtraGrid.Columns.GridColumn

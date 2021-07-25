@@ -3,7 +3,11 @@
     Private _nombre As String
     Private _fecha As Date
     Private _ruta As String
+
     Private _Categoria As String
+
+    Private _Orden As String
+    Private _IdCatOrden As String
 
     Public Property id As Integer
         Get
@@ -49,6 +53,24 @@
         End Get
         Set(value As String)
             _Categoria = value
+        End Set
+    End Property
+
+    Public Property Orden As String
+        Get
+            Return _Orden
+        End Get
+        Set(value As String)
+            _Orden = value
+        End Set
+    End Property
+
+    Public Property IdCategoriaOrden As Integer
+        Get
+            Return _IdCatOrden
+        End Get
+        Set(value As Integer)
+            _IdCatOrden = value
         End Set
     End Property
 

@@ -1,5 +1,9 @@
-﻿Imports AccesoDatos
+﻿Imports System.Configuration
+Imports AccesoDatos
+
 Public Module UploadImagesBIL
+    Public devServerConnectionStr As String = ConfigurationManager.ConnectionStrings("devServer").ConnectionString
+
     Public Function listadoImagenes() As DataTable
         Return UploadImagesDAL.cargarArchivos
     End Function
@@ -20,8 +24,16 @@ Public Module UploadImagesBIL
         Return UploadImagesDAL.guardarCategoria(obj)
     End Function
 
-    Public Function listadoCategoriaCombo() As DataTable
-        Return UploadImagesDAL.cargarCategoriaCombobox
+    Public Function listadoCategoria() As DataTable
+        Return UploadImagesDAL.cargarCategoria
+    End Function
+
+    Public Function guardadoOrden(obj As Entidades.EntUpload) As Entidades.EntUpload
+        Return UploadImagesDAL.guardarOrdenCat(obj)
+    End Function
+
+    Public Function listadoOrdenCategoria() As DataTable
+        Return UploadImagesDAL.cargarOrdenCategoria
     End Function
 
 End Module

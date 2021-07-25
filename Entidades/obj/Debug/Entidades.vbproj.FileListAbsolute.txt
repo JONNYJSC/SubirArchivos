@@ -17,3 +17,12 @@ C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Entidades\obj\Debug
 C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Entidades\obj\Debug\Entidades.xml
 C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Entidades\obj\Debug\Entidades.pdb
 C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Entidades\obj\Debug\Entidades.vbproj.CoreCompileInputs.cache
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\bin\Debug\Entidades.dll
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\bin\Debug\Entidades.pdb
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\bin\Debug\Entidades.xml
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\obj\Debug\Entidades.vbprojResolveAssemblyReference.cache
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.Cache
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\obj\Debug\Entidades.dll
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\obj\Debug\Entidades.xml
+C:\Users\jjona\Desktop\SubirArchivos\Entidades\obj\Debug\Entidades.pdb

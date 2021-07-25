@@ -7,7 +7,8 @@
     Private _Categoria As String
 
     Private _Orden As String
-    Private _IdCatOrden As String
+    Private _IdCatOrden As Integer
+    Private _IdOrdenRegistro As Integer
 
     Public Property id As Integer
         Get
@@ -71,6 +72,15 @@
         End Get
         Set(value As Integer)
             _IdCatOrden = value
+        End Set
+    End Property
+
+    Public Property IdOrdenRegistro As Integer
+        Get
+            Return _IdOrdenRegistro
+        End Get
+        Set(value As Integer)
+            _IdOrdenRegistro = value
         End Set
     End Property
 

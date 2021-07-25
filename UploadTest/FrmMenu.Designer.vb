@@ -62,9 +62,18 @@ Partial Class FrmMenu
         Me.btnAgregarOrden = New DevExpress.XtraEditors.SimpleButton()
         Me.txtOrden = New DevExpress.XtraEditors.TextEdit()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
+        Me.XtraTabAgregarRegistro = New DevExpress.XtraTab.XtraTabPage()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.btnAgregarRegistro = New DevExpress.XtraEditors.SimpleButton()
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
+        Me.btnExaminar = New DevExpress.XtraEditors.SimpleButton()
+        Me.txtRegistro = New DevExpress.XtraEditors.TextEdit()
+        Me.txtExaminar = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlRegistro = New DevExpress.XtraGrid.GridControl()
         Me.GridViewRegistro = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
+        Me.GridControlListadoRegistro = New DevExpress.XtraGrid.GridControl()
+        Me.GridViewReg = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,8 +93,15 @@ Partial Class FrmMenu
         Me.PanelControlOrden.SuspendLayout()
         CType(Me.CbxCategoriaOrden.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOrden.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabAgregarRegistro.SuspendLayout()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
+        CType(Me.txtRegistro.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridViewReg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -244,7 +260,7 @@ Partial Class FrmMenu
         Me.XtraTabListadoCategoria.SelectedTabPage = Me.XtraTabAgregarCategoria
         Me.XtraTabListadoCategoria.Size = New System.Drawing.Size(465, 511)
         Me.XtraTabListadoCategoria.TabIndex = 0
-        Me.XtraTabListadoCategoria.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabAgregarCategoria, Me.XtraTabAgregarOrden})
+        Me.XtraTabListadoCategoria.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabAgregarCategoria, Me.XtraTabAgregarOrden, Me.XtraTabAgregarRegistro})
         '
         'XtraTabAgregarCategoria
         '
@@ -441,10 +457,78 @@ Partial Class FrmMenu
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre Orden"
         '
-        'WorkspaceManager1
+        'XtraTabAgregarRegistro
         '
-        Me.WorkspaceManager1.TargetControl = Me
-        Me.WorkspaceManager1.TransitionType = PushTransition1
+        Me.XtraTabAgregarRegistro.Controls.Add(Me.GridControlListadoRegistro)
+        Me.XtraTabAgregarRegistro.Controls.Add(Me.PanelControl1)
+        Me.XtraTabAgregarRegistro.Name = "XtraTabAgregarRegistro"
+        Me.XtraTabAgregarRegistro.Size = New System.Drawing.Size(459, 483)
+        Me.XtraTabAgregarRegistro.Text = "Agregar Registro"
+        '
+        'PanelControl1
+        '
+        Me.PanelControl1.Controls.Add(Me.btnAgregarRegistro)
+        Me.PanelControl1.Controls.Add(Me.LabelControl1)
+        Me.PanelControl1.Controls.Add(Me.btnExaminar)
+        Me.PanelControl1.Controls.Add(Me.txtRegistro)
+        Me.PanelControl1.Controls.Add(Me.txtExaminar)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 0)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(459, 151)
+        Me.PanelControl1.TabIndex = 0
+        '
+        'btnAgregarRegistro
+        '
+        Me.btnAgregarRegistro.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarRegistro.Appearance.Options.UseFont = True
+        Me.btnAgregarRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnAgregarRegistro.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat
+        Me.btnAgregarRegistro.Image = CType(resources.GetObject("btnAgregarRegistro.Image"), System.Drawing.Image)
+        Me.btnAgregarRegistro.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
+        Me.btnAgregarRegistro.Location = New System.Drawing.Point(368, 9)
+        Me.btnAgregarRegistro.Name = "btnAgregarRegistro"
+        Me.btnAgregarRegistro.Size = New System.Drawing.Size(75, 65)
+        Me.btnAgregarRegistro.TabIndex = 7
+        Me.btnAgregarRegistro.Text = "Agregar"
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(27, 36)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(99, 19)
+        Me.LabelControl1.TabIndex = 0
+        Me.LabelControl1.Text = "Descripción:"
+        '
+        'btnExaminar
+        '
+        Me.btnExaminar.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExaminar.Appearance.Options.UseFont = True
+        Me.btnExaminar.Image = CType(resources.GetObject("btnExaminar.Image"), System.Drawing.Image)
+        Me.btnExaminar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
+        Me.btnExaminar.Location = New System.Drawing.Point(16, 89)
+        Me.btnExaminar.Name = "btnExaminar"
+        Me.btnExaminar.Size = New System.Drawing.Size(121, 30)
+        Me.btnExaminar.TabIndex = 5
+        Me.btnExaminar.Text = "Examinar"
+        '
+        'txtRegistro
+        '
+        Me.txtRegistro.Location = New System.Drawing.Point(143, 35)
+        Me.txtRegistro.MenuManager = Me.BarManager1
+        Me.txtRegistro.Name = "txtRegistro"
+        Me.txtRegistro.Size = New System.Drawing.Size(217, 20)
+        Me.txtRegistro.TabIndex = 3
+        '
+        'txtExaminar
+        '
+        Me.txtExaminar.Enabled = False
+        Me.txtExaminar.Location = New System.Drawing.Point(143, 95)
+        Me.txtExaminar.MenuManager = Me.BarManager1
+        Me.txtExaminar.Name = "txtExaminar"
+        Me.txtExaminar.Size = New System.Drawing.Size(300, 20)
+        Me.txtExaminar.TabIndex = 4
         '
         'GridControlRegistro
         '
@@ -461,6 +545,27 @@ Partial Class FrmMenu
         '
         Me.GridViewRegistro.GridControl = Me.GridControlRegistro
         Me.GridViewRegistro.Name = "GridViewRegistro"
+        '
+        'WorkspaceManager1
+        '
+        Me.WorkspaceManager1.TargetControl = Me
+        Me.WorkspaceManager1.TransitionType = PushTransition1
+        '
+        'GridControlListadoRegistro
+        '
+        Me.GridControlListadoRegistro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlListadoRegistro.Location = New System.Drawing.Point(0, 151)
+        Me.GridControlListadoRegistro.MainView = Me.GridViewReg
+        Me.GridControlListadoRegistro.MenuManager = Me.BarManager1
+        Me.GridControlListadoRegistro.Name = "GridControlListadoRegistro"
+        Me.GridControlListadoRegistro.Size = New System.Drawing.Size(459, 332)
+        Me.GridControlListadoRegistro.TabIndex = 1
+        Me.GridControlListadoRegistro.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewReg})
+        '
+        'GridViewReg
+        '
+        Me.GridViewReg.GridControl = Me.GridControlListadoRegistro
+        Me.GridViewReg.Name = "GridViewReg"
         '
         'FrmMenu
         '
@@ -497,8 +602,16 @@ Partial Class FrmMenu
         Me.PanelControlOrden.PerformLayout()
         CType(Me.CbxCategoriaOrden.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOrden.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabAgregarRegistro.ResumeLayout(False)
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
+        Me.PanelControl1.PerformLayout()
+        CType(Me.txtRegistro.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridViewReg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -545,4 +658,13 @@ Partial Class FrmMenu
     Friend WithEvents GridColumntb_Categoria As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridControlRegistro As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridViewRegistro As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents XtraTabAgregarRegistro As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents txtExaminar As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtRegistro As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnAgregarRegistro As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnExaminar As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GridControlListadoRegistro As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridViewReg As DevExpress.XtraGrid.Views.Grid.GridView
 End Class

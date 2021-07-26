@@ -142,7 +142,8 @@ Public Module UploadImagesDAL
         Try
             Dim sqlda As SqlDataAdapter
             Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
+            'Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
+            Dim cmm As New SqlCommand("SP_ListarOrdenCategoria", cnn)
             cmm.CommandType = CommandType.StoredProcedure
             sqlda = New SqlDataAdapter(cmm)
             datosTablaArchivos = New DataTable("tb_Orden")
@@ -159,10 +160,11 @@ Public Module UploadImagesDAL
         Try
             Dim sqlda As SqlDataAdapter
             Dim cnn = New SqlConnection(devServerConnectionStr)
+            'Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
             Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
             cmm.CommandType = CommandType.StoredProcedure
             sqlda = New SqlDataAdapter(cmm)
-            datosTablaArchivos = New DataTable("tb_Registro")
+            datosTablaArchivos = New DataTable("tb_Registro2")
             sqlda.Fill(datosTablaArchivos)
             cmm.Parameters.Clear()
         Catch ex As Exception

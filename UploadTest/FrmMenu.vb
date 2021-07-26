@@ -57,7 +57,7 @@ Public Class FrmMenu
         Dim obj As New Entidades.EntUpload()
 
         obj.Orden = txtOrden.Text
-        obj.IdCategoriaOrden = 1
+        obj.IdCategoriaOrden = 3
         Logica.guardadoOrden(obj)
         If obj.result > 0 Then
             Me.Load_gridOrdenCat()
@@ -69,6 +69,8 @@ Public Class FrmMenu
 
     Private Sub btnAgregarRegistro_Click(sender As Object, e As EventArgs) Handles btnAgregarRegistro.Click
         guardarRegistro()
+        Load_gridOrdenCat()
+        Load_Registro()
     End Sub
 
     Sub guardarRegistro()

@@ -152,13 +152,14 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE proc [dbo].[SP_ListarOrdenCategoria]
+alter proc [dbo].[SP_ListarOrdenCategoria]
 as
 begin
-	SELECT        tb_Orden.Id_Orden ,tb_Categoria.Nombre_Categoria, count(tb_Categoria.Id_Categoria) As Total
-FROM            tb_Categoria INNER JOIN
+	SELECT        tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria, count(tb_Registro2.IdCategoria) AS Total
+FROM            tb_Registro2 INNER JOIN
+                         tb_Categoria ON tb_Registro2.IdCategoria = tb_Categoria.Id_Categoria INNER JOIN
                          tb_Orden ON tb_Categoria.Id_Categoria = tb_Orden.IdCategoria
-						 group by tb_Orden.Id_Orden, tb_Categoria.Nombre_Categoria
+						 GROUP BY tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria
 end
 GO
 /****** Object:  StoredProcedure [dbo].[SP_ListarRegistro]    Script Date: 25/07/2021 09:34:29 p. m. ******/
@@ -169,10 +170,8 @@ GO
 alter proc [dbo].[SP_ListarRegistro]
 as
 begin
-	SELECT        tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria, count(tb_Orden.Id_Orden) As Total
-FROM            tb_Orden INNER JOIN
-                         tb_Categoria ON tb_Orden.IdCategoria = tb_Categoria.Id_Categoria
-GROUP BY tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria
+	SELECT        Nombre_Registro, Fecha_Registro
+FROM            tb_Registro2
 end
 GO
 
@@ -180,6 +179,12 @@ SELECT        tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria, count(tb_Orde
 FROM            tb_Orden INNER JOIN
                          tb_Categoria ON tb_Orden.IdCategoria = tb_Categoria.Id_Categoria
 GROUP BY tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria
+
+SELECT        tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria, count(tb_Registro2.IdCategoria) AS Total
+FROM            tb_Registro2 INNER JOIN
+                         tb_Categoria ON tb_Registro2.IdCategoria = tb_Categoria.Id_Categoria INNER JOIN
+                         tb_Orden ON tb_Categoria.Id_Categoria = tb_Orden.IdCategoria
+						 GROUP BY tb_Orden.IdCategoria, tb_Categoria.Nombre_Categoria
 
 	SELECT        tb_Orden.IdCategoria, tb_Orden.Nombre_Orden, tb_Categoria.Nombre_Categoria
 FROM            tb_Orden INNER JOIN

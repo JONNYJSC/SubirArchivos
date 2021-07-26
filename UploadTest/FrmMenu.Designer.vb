@@ -536,19 +536,19 @@ Partial Class FrmMenu
         '
         'lbFecha
         '
-        Me.lbFecha.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFecha.Appearance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbFecha.Location = New System.Drawing.Point(143, 17)
         Me.lbFecha.Name = "lbFecha"
-        Me.lbFecha.Size = New System.Drawing.Size(99, 19)
+        Me.lbFecha.Size = New System.Drawing.Size(83, 19)
         Me.lbFecha.TabIndex = 9
         Me.lbFecha.Text = "FechaActual"
         '
         'LabelControl2
         '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl2.Location = New System.Drawing.Point(39, 17)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(53, 19)
+        Me.LabelControl2.Size = New System.Drawing.Size(45, 19)
         Me.LabelControl2.TabIndex = 8
         Me.LabelControl2.Text = "Fecha:"
         '
@@ -568,10 +568,10 @@ Partial Class FrmMenu
         '
         'LabelControl1
         '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(27, 50)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(99, 19)
+        Me.LabelControl1.Size = New System.Drawing.Size(84, 19)
         Me.LabelControl1.TabIndex = 0
         Me.LabelControl1.Text = "Descripción:"
         '

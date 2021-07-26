@@ -26,7 +26,11 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnAgregarCateg_Click(sender As Object, e As EventArgs) Handles btnAgregarCateg.Click
-        guardarCategoria()
+        If Trim(txtNombreCat.Text) = "" Then
+            MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
+        Else
+            guardarCategoria()
+        End If
     End Sub
 
     'metodo para pasar parametros guardar archivo
@@ -49,7 +53,11 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnAgregarOrden_Click(sender As Object, e As EventArgs) Handles btnAgregarOrden.Click
-        guardarOrdenCategoria()
+        If Trim(txtNombreCat.Text) = "" Then
+            MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
+        Else
+            guardarOrdenCategoria()
+        End If
     End Sub
 
     'metodo para pasar parametros guardar archivo
@@ -68,9 +76,13 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnAgregarRegistro_Click(sender As Object, e As EventArgs) Handles btnAgregarRegistro.Click
-        guardarRegistro()
-        Load_gridOrdenCat()
-        Load_Registro()
+        If Trim(txtNombreCat.Text) = "" Then
+            MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
+        Else
+            guardarRegistro()
+            Load_gridOrdenCat()
+            Load_Registro()
+        End If
     End Sub
 
     Sub guardarRegistro()
@@ -95,7 +107,11 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnExaminar_Click(sender As Object, e As EventArgs) Handles btnExaminar.Click
-        examinarArchivo()
+        If Trim(txtNombreCat.Text) = "" Then
+            MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
+        Else
+            examinarArchivo()
+        End If
     End Sub
 
     'abre los archivos del equipo

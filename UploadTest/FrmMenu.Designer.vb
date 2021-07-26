@@ -63,7 +63,13 @@ Partial Class FrmMenu
         Me.txtOrden = New DevExpress.XtraEditors.TextEdit()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.XtraTabAgregarRegistro = New DevExpress.XtraTab.XtraTabPage()
+        Me.GridControlListadoRegistro = New DevExpress.XtraGrid.GridControl()
+        Me.GridViewReg = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumnNombreRegistro = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnFecha_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.lbFecha = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.btnAgregarRegistro = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.btnExaminar = New DevExpress.XtraEditors.SimpleButton()
@@ -72,8 +78,6 @@ Partial Class FrmMenu
         Me.GridControlRegistro = New DevExpress.XtraGrid.GridControl()
         Me.GridViewRegistro = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
-        Me.GridControlListadoRegistro = New DevExpress.XtraGrid.GridControl()
-        Me.GridViewReg = New DevExpress.XtraGrid.Views.Grid.GridView()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,14 +98,14 @@ Partial Class FrmMenu
         CType(Me.CbxCategoriaOrden.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOrden.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabAgregarRegistro.SuspendLayout()
+        CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridViewReg, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
         CType(Me.txtRegistro.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridViewReg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -465,8 +469,47 @@ Partial Class FrmMenu
         Me.XtraTabAgregarRegistro.Size = New System.Drawing.Size(459, 483)
         Me.XtraTabAgregarRegistro.Text = "Agregar Registro"
         '
+        'GridControlListadoRegistro
+        '
+        Me.GridControlListadoRegistro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridControlListadoRegistro.Location = New System.Drawing.Point(0, 151)
+        Me.GridControlListadoRegistro.MainView = Me.GridViewReg
+        Me.GridControlListadoRegistro.MenuManager = Me.BarManager1
+        Me.GridControlListadoRegistro.Name = "GridControlListadoRegistro"
+        Me.GridControlListadoRegistro.Size = New System.Drawing.Size(459, 332)
+        Me.GridControlListadoRegistro.TabIndex = 1
+        Me.GridControlListadoRegistro.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewReg})
+        '
+        'GridViewReg
+        '
+        Me.GridViewReg.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnNombreRegistro, Me.GridColumnFecha_Registro})
+        Me.GridViewReg.GridControl = Me.GridControlListadoRegistro
+        Me.GridViewReg.Name = "GridViewReg"
+        '
+        'GridColumnNombreRegistro
+        '
+        Me.GridColumnNombreRegistro.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnNombreRegistro.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnNombreRegistro.Caption = "Nombre Registro"
+        Me.GridColumnNombreRegistro.FieldName = "Nombre_Registro"
+        Me.GridColumnNombreRegistro.Name = "GridColumnNombreRegistro"
+        Me.GridColumnNombreRegistro.Visible = True
+        Me.GridColumnNombreRegistro.VisibleIndex = 0
+        '
+        'GridColumnFecha_Registro
+        '
+        Me.GridColumnFecha_Registro.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnFecha_Registro.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnFecha_Registro.Caption = "Fecha Registro"
+        Me.GridColumnFecha_Registro.FieldName = "Fecha_Registro"
+        Me.GridColumnFecha_Registro.Name = "GridColumnFecha_Registro"
+        Me.GridColumnFecha_Registro.Visible = True
+        Me.GridColumnFecha_Registro.VisibleIndex = 1
+        '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.lbFecha)
+        Me.PanelControl1.Controls.Add(Me.LabelControl2)
         Me.PanelControl1.Controls.Add(Me.btnAgregarRegistro)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Controls.Add(Me.btnExaminar)
@@ -477,6 +520,24 @@ Partial Class FrmMenu
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(459, 151)
         Me.PanelControl1.TabIndex = 0
+        '
+        'lbFecha
+        '
+        Me.lbFecha.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFecha.Location = New System.Drawing.Point(143, 17)
+        Me.lbFecha.Name = "lbFecha"
+        Me.lbFecha.Size = New System.Drawing.Size(99, 19)
+        Me.lbFecha.TabIndex = 9
+        Me.lbFecha.Text = "FechaActual"
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(39, 17)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(53, 19)
+        Me.LabelControl2.TabIndex = 8
+        Me.LabelControl2.Text = "Fecha:"
         '
         'btnAgregarRegistro
         '
@@ -495,7 +556,7 @@ Partial Class FrmMenu
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(27, 36)
+        Me.LabelControl1.Location = New System.Drawing.Point(27, 50)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(99, 19)
         Me.LabelControl1.TabIndex = 0
@@ -515,7 +576,7 @@ Partial Class FrmMenu
         '
         'txtRegistro
         '
-        Me.txtRegistro.Location = New System.Drawing.Point(143, 35)
+        Me.txtRegistro.Location = New System.Drawing.Point(143, 52)
         Me.txtRegistro.MenuManager = Me.BarManager1
         Me.txtRegistro.Name = "txtRegistro"
         Me.txtRegistro.Size = New System.Drawing.Size(217, 20)
@@ -550,22 +611,6 @@ Partial Class FrmMenu
         '
         Me.WorkspaceManager1.TargetControl = Me
         Me.WorkspaceManager1.TransitionType = PushTransition1
-        '
-        'GridControlListadoRegistro
-        '
-        Me.GridControlListadoRegistro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControlListadoRegistro.Location = New System.Drawing.Point(0, 151)
-        Me.GridControlListadoRegistro.MainView = Me.GridViewReg
-        Me.GridControlListadoRegistro.MenuManager = Me.BarManager1
-        Me.GridControlListadoRegistro.Name = "GridControlListadoRegistro"
-        Me.GridControlListadoRegistro.Size = New System.Drawing.Size(459, 332)
-        Me.GridControlListadoRegistro.TabIndex = 1
-        Me.GridControlListadoRegistro.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewReg})
-        '
-        'GridViewReg
-        '
-        Me.GridViewReg.GridControl = Me.GridControlListadoRegistro
-        Me.GridViewReg.Name = "GridViewReg"
         '
         'FrmMenu
         '
@@ -603,6 +648,8 @@ Partial Class FrmMenu
         CType(Me.CbxCategoriaOrden.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOrden.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabAgregarRegistro.ResumeLayout(False)
+        CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridViewReg, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
@@ -610,8 +657,6 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridViewReg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -667,4 +712,8 @@ Partial Class FrmMenu
     Friend WithEvents btnExaminar As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GridControlListadoRegistro As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridViewReg As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumnNombreRegistro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnFecha_Registro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents lbFecha As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
 End Class

@@ -30,9 +30,11 @@ C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\bin\Debug\AccesoDatos.xml
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\bin\Debug\Entidades.dll
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\bin\Debug\Entidades.pdb
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\bin\Debug\Entidades.xml
-C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.vbprojResolveAssemblyReference.cache
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.Resources.resources
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.vbproj.GenerateResource.Cache
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.xml
 C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.vbproj.AssemblyReference.cache
+C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.vbproj.CoreCompileInputs.cache
+C:\Users\jjona\Desktop\SubirArchivos\AccesoDatos\obj\Debug\AccesoDatos.vbproj.CopyComplete

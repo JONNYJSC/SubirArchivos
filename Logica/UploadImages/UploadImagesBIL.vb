@@ -7,6 +7,7 @@ Public Module UploadImagesBIL
     Public Function listadoImagenes() As DataTable
         Return UploadImagesDAL.cargarArchivos
     End Function
+
     Public Function guardadoImagenes(obj As Entidades.EntUpload) As Entidades.EntUpload
         Return UploadImagesDAL.guardarArchivos(obj)
     End Function
@@ -34,6 +35,14 @@ Public Module UploadImagesBIL
 
     Public Function listadoOrdenCategoria() As DataTable
         Return UploadImagesDAL.cargarOrdenCategoria
+    End Function
+
+    Public Function listadoRegistro() As DataTable
+        Return UploadImagesDAL.cargarRegistro
+    End Function
+
+    Public Function guardadoRegistro(obj As Entidades.EntUpload) As Entidades.EntUpload
+        Return UploadImagesDAL.guardarRegistro(obj)
     End Function
 
 End Module

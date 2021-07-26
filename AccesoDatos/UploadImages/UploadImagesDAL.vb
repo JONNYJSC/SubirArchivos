@@ -154,4 +154,46 @@ Public Module UploadImagesDAL
         Return datosTablaArchivos
     End Function
 
+    Public Function cargarRegistro() As DataTable
+        Dim datosTablaArchivos As DataTable
+        Try
+            Dim sqlda As SqlDataAdapter
+            Dim cnn = New SqlConnection(devServerConnectionStr)
+            Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
+            cmm.CommandType = CommandType.StoredProcedure
+            sqlda = New SqlDataAdapter(cmm)
+            datosTablaArchivos = New DataTable("tb_Registro")
+            sqlda.Fill(datosTablaArchivos)
+            cmm.Parameters.Clear()
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return datosTablaArchivos
+    End Function
+
+    Public Function guardarRegistro(obj As Entidades.EntUpload) As Entidades.EntUpload
+        Try
+            Dim ruta As New FileStream(obj.ruta, FileMode.Open, FileAccess.Read)
+            Dim binario(ruta.Length) As Byte
+            ruta.Read(binario, 0, ruta.Length) 'Leo el archivo y lo convierto a binario 
+            ruta.Close() 'Cierro el FileStream 
+
+            Using cnn As New SqlConnection(devServerConnectionStr)
+                Dim cmm As New SqlCommand("SP_nuevoRegistro", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                cmm.Parameters.AddWithValue("@Nombre_Registro", obj.nombre)
+                cmm.Parameters.AddWithValue("@Fecha_Registro", obj.fecha)
+                cmm.Parameters.AddWithValue("@Archivo_Registro", binario)
+                cmm.Parameters.AddWithValue("@IdOrden", obj.IdOrdenRegistro)
+                cnn.Open()
+                obj.result = cmm.ExecuteNonQuery()
+            End Using
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return obj
+    End Function
+
 End Module

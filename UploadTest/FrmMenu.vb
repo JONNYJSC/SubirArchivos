@@ -108,4 +108,22 @@ Public Class FrmMenu
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    'metodo para pasar parametros Orden Id
+    Sub LoadRegistroOrden()
+        Dim obj As New Entidades.EntUpload()
+
+        Dim row As DataRow
+        row = GridViewListadoOrdenCat.GetDataRow(GridViewListadoOrdenCat.FocusedRowHandle)
+        Dim id As Integer
+        id = row("Id_Orden")
+        'GridViewListadoOrdenCat.DeleteRow(GridViewListadoOrdenCat.FocusedRowHandle)
+        obj.IdOrdenRegistro = id
+
+        GridControlRegistro.DataSource = Logica.listadoRegistroOrden(obj)
+    End Sub
+
+    Private Sub GridControlListadoOrden_DoubleClick(sender As Object, e As EventArgs) Handles GridControlListadoOrden.DoubleClick
+        LoadRegistroOrden()
+    End Sub
 End Class

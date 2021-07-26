@@ -196,4 +196,22 @@ Public Module UploadImagesDAL
         Return obj
     End Function
 
+    Public Function cargarRegistroOrden(obj As Entidades.EntUpload) As DataTable
+        Dim datosTablaArchivos As DataTable
+        Try
+            Dim sqlda As SqlDataAdapter
+            Dim cnn = New SqlConnection(devServerConnectionStr)
+            Dim cmm As New SqlCommand("SP_ListarRegistroOrden", cnn)
+            cmm.CommandType = CommandType.StoredProcedure
+            cmm.Parameters.AddWithValue("@BusqRegistOrden", obj.IdOrdenRegistro)
+            sqlda = New SqlDataAdapter(cmm)
+            datosTablaArchivos = New DataTable("tb_Categoria")
+            sqlda.Fill(datosTablaArchivos)
+            cmm.Parameters.Clear()
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return datosTablaArchivos
+    End Function
+
 End Module

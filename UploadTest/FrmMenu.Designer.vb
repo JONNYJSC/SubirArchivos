@@ -54,6 +54,7 @@ Partial Class FrmMenu
         Me.XtraTabAgregarOrden = New DevExpress.XtraTab.XtraTabPage()
         Me.GridControlListadoOrden = New DevExpress.XtraGrid.GridControl()
         Me.GridViewListadoOrdenCat = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumnId_Orden = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.NombreOrden = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridCategoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlOrden = New DevExpress.XtraEditors.PanelControl()
@@ -373,9 +374,19 @@ Partial Class FrmMenu
         Me.GridViewListadoOrdenCat.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.GridViewListadoOrdenCat.Appearance.Row.Options.UseTextOptions = True
         Me.GridViewListadoOrdenCat.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.GridViewListadoOrdenCat.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.NombreOrden, Me.GridCategoria})
+        Me.GridViewListadoOrdenCat.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId_Orden, Me.GridCategoria, Me.NombreOrden})
         Me.GridViewListadoOrdenCat.GridControl = Me.GridControlListadoOrden
         Me.GridViewListadoOrdenCat.Name = "GridViewListadoOrdenCat"
+        '
+        'GridColumnId_Orden
+        '
+        Me.GridColumnId_Orden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnId_Orden.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnId_Orden.Caption = "Id_Orden"
+        Me.GridColumnId_Orden.FieldName = "Id_Orden"
+        Me.GridColumnId_Orden.Name = "GridColumnId_Orden"
+        Me.GridColumnId_Orden.Visible = True
+        Me.GridColumnId_Orden.VisibleIndex = 0
         '
         'NombreOrden
         '
@@ -384,8 +395,6 @@ Partial Class FrmMenu
         Me.NombreOrden.Caption = "Cantidad de Orden"
         Me.NombreOrden.FieldName = "Total"
         Me.NombreOrden.Name = "NombreOrden"
-        Me.NombreOrden.Visible = True
-        Me.NombreOrden.VisibleIndex = 1
         '
         'GridCategoria
         '
@@ -395,7 +404,7 @@ Partial Class FrmMenu
         Me.GridCategoria.FieldName = "Nombre_Categoria"
         Me.GridCategoria.Name = "GridCategoria"
         Me.GridCategoria.Visible = True
-        Me.GridCategoria.VisibleIndex = 0
+        Me.GridCategoria.VisibleIndex = 1
         '
         'PanelControlOrden
         '
@@ -716,4 +725,5 @@ Partial Class FrmMenu
     Friend WithEvents GridColumnFecha_Registro As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents lbFecha As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GridColumnId_Orden As DevExpress.XtraGrid.Columns.GridColumn
 End Class

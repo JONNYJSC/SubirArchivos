@@ -45,4 +45,8 @@ Public Module UploadImagesBIL
         Return UploadImagesDAL.guardarRegistro(obj)
     End Function
 
+    Public Function listadoRegistroOrden(obj As Entidades.EntUpload) As DataTable
+        Return UploadImagesDAL.cargarRegistroOrden(obj)
+    End Function
+
 End Module

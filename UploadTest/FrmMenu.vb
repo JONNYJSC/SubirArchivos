@@ -158,7 +158,6 @@ Public Class FrmMenu
             row = GridViewRegistro.GetDataRow(GridViewRegistro.FocusedRowHandle)
             Dim id As Integer
             id = row("Id_Registro")
-            'GridViewListadoOrdenCat.DeleteRow(GridViewListadoOrdenCat.FocusedRowHandle)
             obj.IdRegistro = id
 
             Dim dr As SqlDataReader

@@ -697,10 +697,10 @@ Partial Class FrmMenu
         'ArcPDF
         '
         Me.ArcPDF.Enabled = True
-        Me.ArcPDF.Location = New System.Drawing.Point(43, 123)
+        Me.ArcPDF.Location = New System.Drawing.Point(69, 165)
         Me.ArcPDF.Name = "ArcPDF"
         Me.ArcPDF.OcxState = CType(resources.GetObject("ArcPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.ArcPDF.Size = New System.Drawing.Size(384, 331)
+        Me.ArcPDF.Size = New System.Drawing.Size(192, 192)
         Me.ArcPDF.TabIndex = 1
         '
         'FrmMenu

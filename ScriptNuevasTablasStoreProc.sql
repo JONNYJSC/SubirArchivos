@@ -199,7 +199,7 @@ alter proc [dbo].[SP_ListarRegistroCategoria]
 @BusqRegistCategoria int
 as
 begin
-	SELECT        tb_Registro2.Nombre_Registro, tb_Registro2.Fecha_Registro, tb_Registro2.Archivo_Registro, tb_Categoria.Id_Categoria, tb_Registro2.IdCategoria as IdReg_Cat
+	SELECT        tb_Registro2.Id_Registro, tb_Registro2.Nombre_Registro, tb_Registro2.Fecha_Registro, tb_Registro2.Archivo_Registro, tb_Categoria.Id_Categoria, tb_Registro2.IdCategoria as IdReg_Cat
 FROM            tb_Categoria INNER JOIN
                          tb_Registro2 ON tb_Categoria.Id_Categoria = tb_Registro2.IdCategoria
 						 where tb_Registro2.IdCategoria = @BusqRegistCategoria
@@ -271,3 +271,9 @@ SELECT        tb_Registro2.Nombre_Registro, tb_Registro2.Fecha_Registro, tb_Regi
 FROM            tb_Categoria INNER JOIN
                          tb_Registro2 ON tb_Categoria.Id_Categoria = tb_Registro2.IdCategoria
 						 where tb_Registro2.IdCategoria = tb_Registro2.IdCategoria
+
+SELECT        Id_Registro, Nombre_Registro, Fecha_Registro, Archivo_Registro
+FROM            tb_Registro2
+
+
+select * from tb_Registro2

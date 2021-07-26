@@ -12,7 +12,6 @@ C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbproj.Gen
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.dll
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.xml
 C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.pdb
-C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbprojResolveAssemblyReference.cache
 C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Logica\bin\Debug\Logica.dll
 C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Logica\bin\Debug\Logica.pdb
 C:\Users\jjona\Desktop\SubirArchivos-test\SubirArchivos-test\Logica\bin\Debug\Logica.xml
@@ -47,3 +46,6 @@ C:\Users\jjona\Desktop\SubirArchivos\Logica\obj\Debug\Logica.pdb
 C:\Users\jjona\Desktop\SubirArchivos\Logica\obj\Debug\Logica.vbproj.AssemblyReference.cache
 C:\Users\jjona\Desktop\SubirArchivos\Logica\obj\Debug\Logica.vbproj.CoreCompileInputs.cache
 C:\Users\jjona\Desktop\SubirArchivos\Logica\obj\Debug\Logica.vbproj.CopyComplete
+C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbprojAssemblyReference.cache
+C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbproj.CoreCompileInputs.cache
+C:\Users\Developer-12\source\repos\UploadTest\Logica\obj\Debug\Logica.vbproj.CopyComplete

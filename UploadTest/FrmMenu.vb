@@ -77,7 +77,7 @@ Public Class FrmMenu
         obj.nombre = txtRegistro.Text
         obj.fecha = saveUcnow
         obj.ruta = txtExaminar.Text
-        obj.IdOrdenRegistro = 2
+        obj.IdOrdenRegistro = 3
         Logica.guardadoRegistro(obj)
         If obj.result > 0 Then
             Me.Load_Registro()
@@ -116,7 +116,7 @@ Public Class FrmMenu
         Dim row As DataRow
         row = GridViewListadoOrdenCat.GetDataRow(GridViewListadoOrdenCat.FocusedRowHandle)
         Dim id As Integer
-        id = row("Id_Orden")
+        id = row("IdCategoria")
         'GridViewListadoOrdenCat.DeleteRow(GridViewListadoOrdenCat.FocusedRowHandle)
         obj.IdOrdenRegistro = id
 

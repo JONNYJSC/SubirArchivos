@@ -142,7 +142,7 @@ Public Module UploadImagesDAL
         Try
             Dim sqlda As SqlDataAdapter
             Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarOrdenCategoria", cnn)
+            Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
             cmm.CommandType = CommandType.StoredProcedure
             sqlda = New SqlDataAdapter(cmm)
             datosTablaArchivos = New DataTable("tb_Orden")
@@ -179,12 +179,12 @@ Public Module UploadImagesDAL
             ruta.Close() 'Cierro el FileStream 
 
             Using cnn As New SqlConnection(devServerConnectionStr)
-                Dim cmm As New SqlCommand("SP_nuevoRegistro", cnn)
+                Dim cmm As New SqlCommand("SP_nuevoRegistro2", cnn)
                 cmm.CommandType = CommandType.StoredProcedure
                 cmm.Parameters.AddWithValue("@Nombre_Registro", obj.nombre)
                 cmm.Parameters.AddWithValue("@Fecha_Registro", obj.fecha)
                 cmm.Parameters.AddWithValue("@Archivo_Registro", binario)
-                cmm.Parameters.AddWithValue("@IdOrden", obj.IdOrdenRegistro)
+                cmm.Parameters.AddWithValue("@IdCategoria", obj.IdOrdenRegistro)
                 cnn.Open()
                 obj.result = cmm.ExecuteNonQuery()
             End Using
@@ -201,9 +201,9 @@ Public Module UploadImagesDAL
         Try
             Dim sqlda As SqlDataAdapter
             Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarRegistroOrden", cnn)
+            Dim cmm As New SqlCommand("SP_ListarRegistroCategoria", cnn)
             cmm.CommandType = CommandType.StoredProcedure
-            cmm.Parameters.AddWithValue("@BusqRegistOrden", obj.IdOrdenRegistro)
+            cmm.Parameters.AddWithValue("@BusqRegistCategoria", obj.IdOrdenRegistro)
             sqlda = New SqlDataAdapter(cmm)
             datosTablaArchivos = New DataTable("tb_Categoria")
             sqlda.Fill(datosTablaArchivos)

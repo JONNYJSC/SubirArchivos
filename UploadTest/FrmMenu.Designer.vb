@@ -55,8 +55,8 @@ Partial Class FrmMenu
         Me.GridControlListadoOrden = New DevExpress.XtraGrid.GridControl()
         Me.GridViewListadoOrdenCat = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumnId_Orden = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.NombreOrden = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridCategoria = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.NombreOrden = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlOrden = New DevExpress.XtraEditors.PanelControl()
         Me.CbxCategoriaOrden = New DevExpress.XtraEditors.LookUpEdit()
         Me.LabelCateg = New System.Windows.Forms.Label()
@@ -79,6 +79,12 @@ Partial Class FrmMenu
         Me.GridControlRegistro = New DevExpress.XtraGrid.GridControl()
         Me.GridViewRegistro = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
+        Me.GridColumnNombre_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn_Fecha_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn_Archivo_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1Id_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2IdReg_Cat = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,7 +380,7 @@ Partial Class FrmMenu
         Me.GridViewListadoOrdenCat.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.GridViewListadoOrdenCat.Appearance.Row.Options.UseTextOptions = True
         Me.GridViewListadoOrdenCat.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.GridViewListadoOrdenCat.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId_Orden, Me.GridCategoria, Me.NombreOrden})
+        Me.GridViewListadoOrdenCat.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId_Orden, Me.NombreOrden, Me.GridCategoria, Me.GridColumnTotal})
         Me.GridViewListadoOrdenCat.GridControl = Me.GridControlListadoOrden
         Me.GridViewListadoOrdenCat.Name = "GridViewListadoOrdenCat"
         '
@@ -382,19 +388,9 @@ Partial Class FrmMenu
         '
         Me.GridColumnId_Orden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
         Me.GridColumnId_Orden.AppearanceHeader.Options.UseFont = True
-        Me.GridColumnId_Orden.Caption = "Id_Orden"
-        Me.GridColumnId_Orden.FieldName = "Id_Orden"
+        Me.GridColumnId_Orden.Caption = "Id_Categoria"
+        Me.GridColumnId_Orden.FieldName = "IdCategoria"
         Me.GridColumnId_Orden.Name = "GridColumnId_Orden"
-        Me.GridColumnId_Orden.Visible = True
-        Me.GridColumnId_Orden.VisibleIndex = 0
-        '
-        'NombreOrden
-        '
-        Me.NombreOrden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.NombreOrden.AppearanceHeader.Options.UseFont = True
-        Me.NombreOrden.Caption = "Cantidad de Orden"
-        Me.NombreOrden.FieldName = "Total"
-        Me.NombreOrden.Name = "NombreOrden"
         '
         'GridCategoria
         '
@@ -404,7 +400,15 @@ Partial Class FrmMenu
         Me.GridCategoria.FieldName = "Nombre_Categoria"
         Me.GridCategoria.Name = "GridCategoria"
         Me.GridCategoria.Visible = True
-        Me.GridCategoria.VisibleIndex = 1
+        Me.GridCategoria.VisibleIndex = 0
+        '
+        'NombreOrden
+        '
+        Me.NombreOrden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.NombreOrden.AppearanceHeader.Options.UseFont = True
+        Me.NombreOrden.Caption = "Nombre_Orden"
+        Me.NombreOrden.FieldName = "Nombre Orden"
+        Me.NombreOrden.Name = "NombreOrden"
         '
         'PanelControlOrden
         '
@@ -613,6 +617,7 @@ Partial Class FrmMenu
         '
         'GridViewRegistro
         '
+        Me.GridViewRegistro.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnNombre_Registro, Me.GridColumn_Fecha_Registro, Me.GridColumn_Archivo_Registro, Me.GridColumn1Id_Categoria, Me.GridColumn2IdReg_Cat})
         Me.GridViewRegistro.GridControl = Me.GridControlRegistro
         Me.GridViewRegistro.Name = "GridViewRegistro"
         '
@@ -620,6 +625,62 @@ Partial Class FrmMenu
         '
         Me.WorkspaceManager1.TargetControl = Me
         Me.WorkspaceManager1.TransitionType = PushTransition1
+        '
+        'GridColumnNombre_Registro
+        '
+        Me.GridColumnNombre_Registro.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnNombre_Registro.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnNombre_Registro.Caption = "Nombre Registro"
+        Me.GridColumnNombre_Registro.FieldName = "Nombre_Registro"
+        Me.GridColumnNombre_Registro.Name = "GridColumnNombre_Registro"
+        Me.GridColumnNombre_Registro.Visible = True
+        Me.GridColumnNombre_Registro.VisibleIndex = 0
+        '
+        'GridColumn_Fecha_Registro
+        '
+        Me.GridColumn_Fecha_Registro.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumn_Fecha_Registro.AppearanceHeader.Options.UseFont = True
+        Me.GridColumn_Fecha_Registro.Caption = "Fecha Registro"
+        Me.GridColumn_Fecha_Registro.FieldName = "Fecha_Registro"
+        Me.GridColumn_Fecha_Registro.Name = "GridColumn_Fecha_Registro"
+        Me.GridColumn_Fecha_Registro.Visible = True
+        Me.GridColumn_Fecha_Registro.VisibleIndex = 1
+        '
+        'GridColumn_Archivo_Registro
+        '
+        Me.GridColumn_Archivo_Registro.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumn_Archivo_Registro.AppearanceHeader.Options.UseFont = True
+        Me.GridColumn_Archivo_Registro.Caption = "Archivo Registro"
+        Me.GridColumn_Archivo_Registro.FieldName = "Archivo_Registro"
+        Me.GridColumn_Archivo_Registro.Name = "GridColumn_Archivo_Registro"
+        Me.GridColumn_Archivo_Registro.Visible = True
+        Me.GridColumn_Archivo_Registro.VisibleIndex = 2
+        '
+        'GridColumn1Id_Categoria
+        '
+        Me.GridColumn1Id_Categoria.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumn1Id_Categoria.AppearanceHeader.Options.UseFont = True
+        Me.GridColumn1Id_Categoria.Caption = "Id Categoria"
+        Me.GridColumn1Id_Categoria.FieldName = "Id_Categoria"
+        Me.GridColumn1Id_Categoria.Name = "GridColumn1Id_Categoria"
+        '
+        'GridColumn2IdReg_Cat
+        '
+        Me.GridColumn2IdReg_Cat.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumn2IdReg_Cat.AppearanceHeader.Options.UseFont = True
+        Me.GridColumn2IdReg_Cat.Caption = "IdReg Cat"
+        Me.GridColumn2IdReg_Cat.FieldName = "IdReg_Cat"
+        Me.GridColumn2IdReg_Cat.Name = "GridColumn2IdReg_Cat"
+        '
+        'GridColumnTotal
+        '
+        Me.GridColumnTotal.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnTotal.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnTotal.Caption = "Total"
+        Me.GridColumnTotal.FieldName = "Total"
+        Me.GridColumnTotal.Name = "GridColumnTotal"
+        Me.GridColumnTotal.Visible = True
+        Me.GridColumnTotal.VisibleIndex = 1
         '
         'FrmMenu
         '
@@ -726,4 +787,10 @@ Partial Class FrmMenu
     Friend WithEvents lbFecha As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GridColumnId_Orden As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnNombre_Registro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn_Fecha_Registro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn_Archivo_Registro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1Id_Categoria As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2IdReg_Cat As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
 End Class

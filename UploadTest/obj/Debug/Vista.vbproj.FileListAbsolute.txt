@@ -929,3 +929,8 @@ C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.ex
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\UploadTest.FrmMenu.resources
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\Vista.vbproj.CoreCompileInputs.cache
 C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\Vista.vbproj.CopyComplete
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Developer-12\source\repos\UploadTest\UploadTest\obj\Debug\Vista.vbproj.ResolveComReference.cache

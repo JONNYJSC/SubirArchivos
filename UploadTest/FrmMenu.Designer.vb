@@ -55,8 +55,9 @@ Partial Class FrmMenu
         Me.GridControlListadoOrden = New DevExpress.XtraGrid.GridControl()
         Me.GridViewListadoOrdenCat = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumnId_Orden = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridCategoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.NombreOrden = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridCategoria = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlOrden = New DevExpress.XtraEditors.PanelControl()
         Me.CbxCategoriaOrden = New DevExpress.XtraEditors.LookUpEdit()
         Me.LabelCateg = New System.Windows.Forms.Label()
@@ -78,13 +79,14 @@ Partial Class FrmMenu
         Me.txtExaminar = New DevExpress.XtraEditors.TextEdit()
         Me.GridControlRegistro = New DevExpress.XtraGrid.GridControl()
         Me.GridViewRegistro = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
+        Me.GridColumnId_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnNombre_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn_Fecha_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn_Archivo_Registro = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn1Id_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2IdReg_Cat = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
+        Me.ArcPDF = New AxAcroPDFLib.AxAcroPDF()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,6 +115,7 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -256,6 +259,7 @@ Partial Class FrmMenu
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.XtraTabListadoCategoria)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.ArcPDF)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlRegistro)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1030, 511)
@@ -392,6 +396,14 @@ Partial Class FrmMenu
         Me.GridColumnId_Orden.FieldName = "IdCategoria"
         Me.GridColumnId_Orden.Name = "GridColumnId_Orden"
         '
+        'NombreOrden
+        '
+        Me.NombreOrden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.NombreOrden.AppearanceHeader.Options.UseFont = True
+        Me.NombreOrden.Caption = "Nombre_Orden"
+        Me.NombreOrden.FieldName = "Nombre Orden"
+        Me.NombreOrden.Name = "NombreOrden"
+        '
         'GridCategoria
         '
         Me.GridCategoria.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
@@ -402,13 +414,15 @@ Partial Class FrmMenu
         Me.GridCategoria.Visible = True
         Me.GridCategoria.VisibleIndex = 0
         '
-        'NombreOrden
+        'GridColumnTotal
         '
-        Me.NombreOrden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.NombreOrden.AppearanceHeader.Options.UseFont = True
-        Me.NombreOrden.Caption = "Nombre_Orden"
-        Me.NombreOrden.FieldName = "Nombre Orden"
-        Me.NombreOrden.Name = "NombreOrden"
+        Me.GridColumnTotal.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnTotal.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnTotal.Caption = "Total"
+        Me.GridColumnTotal.FieldName = "Total"
+        Me.GridColumnTotal.Name = "GridColumnTotal"
+        Me.GridColumnTotal.Visible = True
+        Me.GridColumnTotal.VisibleIndex = 1
         '
         'PanelControlOrden
         '
@@ -617,14 +631,17 @@ Partial Class FrmMenu
         '
         'GridViewRegistro
         '
-        Me.GridViewRegistro.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnNombre_Registro, Me.GridColumn_Fecha_Registro, Me.GridColumn_Archivo_Registro, Me.GridColumn1Id_Categoria, Me.GridColumn2IdReg_Cat})
+        Me.GridViewRegistro.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId_Registro, Me.GridColumnNombre_Registro, Me.GridColumn_Fecha_Registro, Me.GridColumn_Archivo_Registro, Me.GridColumn1Id_Categoria, Me.GridColumn2IdReg_Cat})
         Me.GridViewRegistro.GridControl = Me.GridControlRegistro
         Me.GridViewRegistro.Name = "GridViewRegistro"
         '
-        'WorkspaceManager1
+        'GridColumnId_Registro
         '
-        Me.WorkspaceManager1.TargetControl = Me
-        Me.WorkspaceManager1.TransitionType = PushTransition1
+        Me.GridColumnId_Registro.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnId_Registro.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnId_Registro.Caption = "Id Registro"
+        Me.GridColumnId_Registro.FieldName = "Id_Registro"
+        Me.GridColumnId_Registro.Name = "GridColumnId_Registro"
         '
         'GridColumnNombre_Registro
         '
@@ -672,15 +689,19 @@ Partial Class FrmMenu
         Me.GridColumn2IdReg_Cat.FieldName = "IdReg_Cat"
         Me.GridColumn2IdReg_Cat.Name = "GridColumn2IdReg_Cat"
         '
-        'GridColumnTotal
+        'WorkspaceManager1
         '
-        Me.GridColumnTotal.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.GridColumnTotal.AppearanceHeader.Options.UseFont = True
-        Me.GridColumnTotal.Caption = "Total"
-        Me.GridColumnTotal.FieldName = "Total"
-        Me.GridColumnTotal.Name = "GridColumnTotal"
-        Me.GridColumnTotal.Visible = True
-        Me.GridColumnTotal.VisibleIndex = 1
+        Me.WorkspaceManager1.TargetControl = Me
+        Me.WorkspaceManager1.TransitionType = PushTransition1
+        '
+        'ArcPDF
+        '
+        Me.ArcPDF.Enabled = True
+        Me.ArcPDF.Location = New System.Drawing.Point(43, 123)
+        Me.ArcPDF.Name = "ArcPDF"
+        Me.ArcPDF.OcxState = CType(resources.GetObject("ArcPDF.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.ArcPDF.Size = New System.Drawing.Size(384, 331)
+        Me.ArcPDF.TabIndex = 1
         '
         'FrmMenu
         '
@@ -727,6 +748,7 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -793,4 +815,6 @@ Partial Class FrmMenu
     Friend WithEvents GridColumn1Id_Categoria As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2IdReg_Cat As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnId_Registro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents ArcPDF As AxAcroPDFLib.AxAcroPDF
 End Class

@@ -1,7 +1,8 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 
 Public Class FrmMenu
-
+    Dim cnn As New SqlConnection
     ' Me trae la fecha actual
     Dim saveUcnow As DateTime = DateTime.Now
 
@@ -144,4 +145,96 @@ Public Class FrmMenu
     Private Sub GridControlListadoOrden_DoubleClick(sender As Object, e As EventArgs) Handles GridControlListadoOrden.DoubleClick
         LoadRegistroOrden()
     End Sub
+
+    Private Sub GridControlRegistro_DoubleClick(sender As Object, e As EventArgs) Handles GridControlRegistro.DoubleClick
+        'Evento dobloe click del GridControl para mostrar pdf
+    End Sub
+
+    '-----------------Decodificar binario a pdf------ Verificar todo el codigo
+    Sub EventoGrid()
+        Try
+            Dim obj As New Entidades.EntUpload
+            Dim row As DataRow
+            row = GridViewRegistro.GetDataRow(GridViewRegistro.FocusedRowHandle)
+            Dim id As Integer
+            id = row("Id_Registro")
+            'GridViewListadoOrdenCat.DeleteRow(GridViewListadoOrdenCat.FocusedRowHandle)
+            obj.IdRegistro = id
+
+            Dim dr As SqlDataReader
+            Dim directorioArchivo As String
+            directorioArchivo = System.AppDomain.CurrentDomain.BaseDirectory() & "temp.pdf"
+
+            Dim str_cadena As String
+            str_cadena = "select * from tb_Registro2 where Id_Registro=" & id
+
+            If conectar() = False Then
+                Exit Sub
+            End If
+
+            dr = fun_ExecuteReader(str_cadena)
+            If dr.HasRows Then
+                While dr.Read
+                    id = dr("Id_Registro")
+                    If dr("Archivo_Registro") IsNot DBNull.Value Then
+                        Dim bytes() As Byte
+                        bytes = dr("Archivo_Registro")
+
+                        BytesAArchivo(bytes, directorioArchivo)
+                        ArcPDF.src = directorioArchivo
+
+                        My.Computer.FileSystem.DeleteFile(directorioArchivo)
+                    End If
+                End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub BytesAArchivo(ByVal bytes() As Byte, ByVal Path As String)
+        Dim K As Long
+        If bytes Is Nothing Then Exit Sub
+        Try
+            K = UBound(bytes)
+            Dim fs As New FileStream(Path, FileMode.OpenOrCreate, FileAccess.Write)
+            fs.Write(bytes, 0, K)
+            fs.Close()
+        Catch ex As Exception
+            Throw New Exception(ex.Message, ex)
+        End Try
+    End Sub
+
+    Public Function fun_ExecuteReader(ByVal cadenasql As String, Optional i As Integer = 0) As SqlDataReader
+        Try
+            Dim cmd As SqlCommand
+
+            cmd = New SqlCommand
+            cmd.CommandText = cadenasql
+            If i = 0 Then
+                cmd.CommandType = CommandType.Text
+            Else
+                cmd.CommandType = CommandType.StoredProcedure
+            End If
+            cmd.Connection = cnn
+            Return cmd.ExecuteReader()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function conectar() As Boolean
+        Try
+            conectar = False
+            cnn = New SqlConnection
+            cnn.ConnectionString = Logica.devServerConnectionStr
+            If cnn.State = ConnectionState.Closed Then
+                cnn.Open()
+            End If
+            conectar = True
+        Catch ex As Exception
+            conectar = False
+        End Try
+    End Function
+
 End Class

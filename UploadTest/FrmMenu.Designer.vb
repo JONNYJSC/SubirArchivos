@@ -86,7 +86,6 @@ Partial Class FrmMenu
         Me.GridColumn1Id_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2IdReg_Cat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
-        Me.ArcPDF = New AxAcroPDFLib.AxAcroPDF()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,7 +114,6 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -259,7 +257,6 @@ Partial Class FrmMenu
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.XtraTabListadoCategoria)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.ArcPDF)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControlRegistro)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1030, 511)
@@ -694,15 +691,6 @@ Partial Class FrmMenu
         Me.WorkspaceManager1.TargetControl = Me
         Me.WorkspaceManager1.TransitionType = PushTransition1
         '
-        'ArcPDF
-        '
-        Me.ArcPDF.Enabled = True
-        Me.ArcPDF.Location = New System.Drawing.Point(69, 165)
-        Me.ArcPDF.Name = "ArcPDF"
-        Me.ArcPDF.OcxState = CType(resources.GetObject("ArcPDF.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.ArcPDF.Size = New System.Drawing.Size(192, 192)
-        Me.ArcPDF.TabIndex = 1
-        '
         'FrmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -748,7 +736,6 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ArcPDF, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -816,5 +803,4 @@ Partial Class FrmMenu
     Friend WithEvents GridColumn2IdReg_Cat As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId_Registro As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents ArcPDF As AxAcroPDFLib.AxAcroPDF
 End Class

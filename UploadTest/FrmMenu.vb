@@ -77,7 +77,7 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnAgregarRegistro_Click(sender As Object, e As EventArgs) Handles btnAgregarRegistro.Click
-        If Trim(txtNombreCat.Text) = "" Then
+        If Trim(txtRegistro.Text) = "" Then
             MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
         Else
             guardarRegistro()
@@ -108,11 +108,7 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnExaminar_Click(sender As Object, e As EventArgs) Handles btnExaminar.Click
-        If Trim(txtNombreCat.Text) = "" Then
-            MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
-        Else
-            examinarArchivo()
-        End If
+        examinarArchivo()
     End Sub
 
     'abre los archivos del equipo
@@ -122,6 +118,10 @@ Public Class FrmMenu
             archivo.Filter = "Archivo PDF|*.pdf"
             If archivo.ShowDialog = DialogResult.OK Then
                 txtExaminar.Text = archivo.FileName
+
+                'muestra el pdf antes de subir al bd
+                'ArcPDF.src = archivo.FileName (No necesaria)
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -136,7 +136,10 @@ Public Class FrmMenu
         row = GridViewListadoOrdenCat.GetDataRow(GridViewListadoOrdenCat.FocusedRowHandle)
         Dim id As Integer
         id = row("IdCategoria")
+
+        'Elimina la fila seleccionada
         'GridViewListadoOrdenCat.DeleteRow(GridViewListadoOrdenCat.FocusedRowHandle)
+
         obj.IdOrdenRegistro = id
 
         GridControlRegistro.DataSource = Logica.listadoRegistroOrden(obj)
@@ -148,6 +151,7 @@ Public Class FrmMenu
 
     Private Sub GridControlRegistro_DoubleClick(sender As Object, e As EventArgs) Handles GridControlRegistro.DoubleClick
         'Evento dobloe click del GridControl para mostrar pdf
+        EventoGrid()
     End Sub
 
     '-----------------Decodificar binario a pdf------ Verificar todo el codigo
@@ -170,17 +174,28 @@ Public Class FrmMenu
             If conectar() = False Then
                 Exit Sub
             End If
+            'ObtenCampoPorNombre(txtExaminar.Text, row)
+            'AbrirDocumento(directorioArchivo)
 
             dr = fun_ExecuteReader(str_cadena)
             If dr.HasRows Then
                 While dr.Read
                     id = dr("Id_Registro")
+                    txtRegistro.Text = dr("Nombre_Registro")
+                    lbFecha.Text = dr("Fecha_Registro")
+
                     If dr("Archivo_Registro") IsNot DBNull.Value Then
                         Dim bytes() As Byte
                         bytes = dr("Archivo_Registro")
 
                         BytesAArchivo(bytes, directorioArchivo)
-                        ArcPDF.src = directorioArchivo
+                        'ObtenCampoPorNombre("Archivo_Registro", row)
+                        'AbrirDocumento(directorioArchivo)
+                        'bytes = ObtenCampoPorNombre("Archivo_Registro", row)
+                        'BytesAArchivo(bytes, directorioArchivo)
+                        AbrirDocumento(directorioArchivo)
+                        'No es necesaria (ArcPDF.src = directorioArchivo)
+                        'ArcPDF.src = directorioArchivo
 
                         My.Computer.FileSystem.DeleteFile(directorioArchivo)
                     End If
@@ -236,4 +251,36 @@ Public Class FrmMenu
         End Try
     End Function
 
+    '----------------------Metodo para abrir directamente el documento-----------------------------------------------------
+    Private Sub AbrirDocumento(ByVal vFilename As String)
+        Dim pr As System.Diagnostics.Process
+        pr = New System.Diagnostics.Process
+        Try
+            pr.StartInfo.FileName = vFilename
+            pr.StartInfo.WindowStyle = ProcessWindowStyle.Normal
+            pr.Start()
+            'Espera el proceso para que lo termine y continuar
+            pr.WaitForExit()
+            'Liberar
+            pr.Close()
+            'My.Computer.FileSystem.DeleteFile(vFilename)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message + " No se puede abrir el documento " & vFilename, "Error")
+        End Try
+    End Sub
+    '--------------------------------------------------------------------------------------------
+    Public Function ObtenCampoPorNombre(ByVal aNombreCampo As String, sqlDataRow As DataRow) As Object
+        Try
+            ObtenCampoPorNombre = Nothing
+            If sqlDataRow Is Nothing Then
+                Exit Function
+            End If
+            If IsDBNull(sqlDataRow.Item(aNombreCampo)) Then
+                Exit Function
+            End If
+            ObtenCampoPorNombre = sqlDataRow.Item(aNombreCampo)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
 End Class

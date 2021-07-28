@@ -180,6 +180,8 @@ Public Module UploadImagesDAL
             ruta.Read(binario, 0, ruta.Length) 'Leo el archivo y lo convierto a binario 
             ruta.Close() 'Cierro el FileStream 
 
+            Dim byt As New Byte()
+
             'Dim ruta2 = ArchivoABytes(obj.ruta)
             'Dim directorioArchivo As String
             'directorioArchivo = System.AppDomain.CurrentDomain.BaseDirectory() & "temp.pdf"

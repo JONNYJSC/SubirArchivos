@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
+Imports DevExpress.XtraEditors
 
 Public Class FrmMenu
     Dim cnn As New SqlConnection
@@ -165,56 +166,38 @@ Public Class FrmMenu
             obj.IdRegistro = id
 
             Dim dr As SqlDataReader
-            Dim directorioArchivo As String
-            directorioArchivo = System.AppDomain.CurrentDomain.BaseDirectory() & "temp.pdf"
 
             Dim str_cadena As String
-            str_cadena = "select * from tb_Registro2 where Id_Registro=" & id
+            str_cadena = "select Archivo_Registro from tb_Registro2 where Id_Registro = " & id
 
             If conectar() = False Then
                 Exit Sub
             End If
-            'ObtenCampoPorNombre(txtExaminar.Text, row)
-            'AbrirDocumento(directorioArchivo)
 
             dr = fun_ExecuteReader(str_cadena)
             If dr.HasRows Then
                 While dr.Read
-                    id = dr("Id_Registro")
-                    txtRegistro.Text = dr("Nombre_Registro")
-                    lbFecha.Text = dr("Fecha_Registro")
-
                     If dr("Archivo_Registro") IsNot DBNull.Value Then
                         Dim bytes() As Byte
                         bytes = dr("Archivo_Registro")
 
-                        BytesAArchivo(bytes, directorioArchivo)
-                        'ObtenCampoPorNombre("Archivo_Registro", row)
-                        'AbrirDocumento(directorioArchivo)
-                        'bytes = ObtenCampoPorNombre("Archivo_Registro", row)
-                        'BytesAArchivo(bytes, directorioArchivo)
-                        AbrirDocumento(directorioArchivo)
-                        'No es necesaria (ArcPDF.src = directorioArchivo)
-                        'ArcPDF.src = directorioArchivo
-
-                        My.Computer.FileSystem.DeleteFile(directorioArchivo)
+                        Try
+                            Dim sFile As String = String.Format("{0}{1}.pdf", "PO_", "CertificateLots")
+                            Dim fs As New FileStream(sFile, FileMode.Create)
+                            fs.Write(bytes, 0, Convert.ToInt32(bytes.Length))
+                            fs.Close()
+                            Dim obja As New System.Diagnostics.Process()
+                            obja.StartInfo.FileName = sFile
+                            obja.Start()
+                        Catch generatedExceptionName As Exception
+                            XtraMessageBox.Show(Me, "There was an error getting the lot from its path. Please check if exist.", "Demetech Manufacturing", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End Try
                     End If
                 End While
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-    Private Sub BytesAArchivo(ByVal bytes() As Byte, ByVal Path As String)
-        Dim K As Long
-        If bytes Is Nothing Then Exit Sub
-        Try
-            K = UBound(bytes)
-            Dim fs As New FileStream(Path, FileMode.OpenOrCreate, FileAccess.Write)
-            fs.Write(bytes, 0, K)
-            fs.Close()
-        Catch ex As Exception
-            Throw New Exception(ex.Message, ex)
+            XtraMessageBox.Show(Me, "There was an error getting the lot from its path. Please check if exist.", "Demetech Manufacturing", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
         End Try
     End Sub
 
@@ -282,5 +265,6 @@ Public Class FrmMenu
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        Return ObtenCampoPorNombre(aNombreCampo, sqlDataRow)
     End Function
 End Class

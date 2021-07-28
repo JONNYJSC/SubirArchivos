@@ -180,24 +180,12 @@ Public Module UploadImagesDAL
             ruta.Read(binario, 0, ruta.Length) 'Leo el archivo y lo convierto a binario 
             ruta.Close() 'Cierro el FileStream 
 
-            Dim byt As New Byte()
-
-            'Dim ruta2 = ArchivoABytes(obj.ruta)
-            'Dim directorioArchivo As String
-            'directorioArchivo = System.AppDomain.CurrentDomain.BaseDirectory() & "temp.pdf"
-
             Using cnn As New SqlConnection(devServerConnectionStr)
                 Dim cmm As New SqlCommand("SP_nuevoRegistro2", cnn)
                 cmm.CommandType = CommandType.StoredProcedure
                 cmm.Parameters.AddWithValue("@Nombre_Registro", obj.nombre)
                 cmm.Parameters.AddWithValue("@Fecha_Registro", obj.fecha)
                 cmm.Parameters.AddWithValue("@Archivo_Registro", binario)
-
-                'Dim ParametroRec As New SqlParameter("@Archivo_Registro", SqlDbType.Image)
-                'Dim ParametroRec As New SqlParameter("@Archivo_Registro", ruta2)
-                'ParametroRec.Value = ArchivoABytes(directorioArchivo)
-                'cmm.Parameters.Add(ParametroRec)
-                'cmm.Parameters.AddWithValue("@Archivo_Registro", SqlDbType.Image)
 
                 cmm.Parameters.AddWithValue("@IdCategoria", obj.IdOrdenRegistro)
                 cnn.Open()
@@ -210,20 +198,6 @@ Public Module UploadImagesDAL
 
         Return obj
     End Function
-
-    'Private Function ArchivoABytes(ByVal pth As String) As Byte()
-    '    Try
-    '        Dim fs As New FileStream(pth, FileMode.Open)
-    '        fs.Position = 0
-    '        Dim bytes(0 To fs.Length - 1) As Byte
-    '        fs.Read(bytes, 0, fs.Length)
-    '        fs.Close()
-    '        '            File.Delete(pth)
-    '        Return bytes
-    '    Catch ex As Exception
-    '        Throw New Exception(ex.Message, ex)
-    '    End Try
-    'End Function
 
     Public Function cargarRegistroOrden(obj As Entidades.EntUpload) As DataTable
         Dim datosTablaArchivos As DataTable

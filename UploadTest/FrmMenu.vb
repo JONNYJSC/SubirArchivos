@@ -56,7 +56,7 @@ Public Class FrmMenu
 
     Private Sub btnAgregarOrden_Click(sender As Object, e As EventArgs) Handles btnAgregarOrden.Click
         If Trim(txtOrden.Text) = "" Then
-            MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
+            MsgBox("Llenar Campo Orden Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
         Else
             guardarOrdenCategoria()
             txtOrden.Text = ""
@@ -86,6 +86,7 @@ Public Class FrmMenu
             guardarRegistro()
             Load_gridOrdenCat()
             Load_Registro()
+            Load_gridCat()
         End If
     End Sub
 
@@ -122,10 +123,6 @@ Public Class FrmMenu
             archivo.Filter = "Archivo PDF|*.pdf"
             If archivo.ShowDialog = DialogResult.OK Then
                 txtExaminar.Text = archivo.FileName
-
-                'muestra el pdf antes de subir al bd
-                'ArcPDF.src = archivo.FileName (No necesaria)
-
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

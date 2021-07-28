@@ -54,9 +54,10 @@ Partial Class FrmMenu
         Me.XtraTabAgregarOrden = New DevExpress.XtraTab.XtraTabPage()
         Me.GridControlListadoOrden = New DevExpress.XtraGrid.GridControl()
         Me.GridViewListadoOrdenCat = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumnId_Orden = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.NombreOrden = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridCategoria = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnId_Orden = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumnId_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlOrden = New DevExpress.XtraEditors.PanelControl()
         Me.CbxCategoriaOrden = New DevExpress.XtraEditors.LookUpEdit()
@@ -381,17 +382,9 @@ Partial Class FrmMenu
         Me.GridViewListadoOrdenCat.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.GridViewListadoOrdenCat.Appearance.Row.Options.UseTextOptions = True
         Me.GridViewListadoOrdenCat.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-        Me.GridViewListadoOrdenCat.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumnId_Orden, Me.NombreOrden, Me.GridCategoria, Me.GridColumnTotal})
+        Me.GridViewListadoOrdenCat.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.NombreOrden, Me.GridCategoria, Me.GridColumnId_Orden, Me.GridColumnId_Categoria, Me.GridColumnTotal})
         Me.GridViewListadoOrdenCat.GridControl = Me.GridControlListadoOrden
         Me.GridViewListadoOrdenCat.Name = "GridViewListadoOrdenCat"
-        '
-        'GridColumnId_Orden
-        '
-        Me.GridColumnId_Orden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.GridColumnId_Orden.AppearanceHeader.Options.UseFont = True
-        Me.GridColumnId_Orden.Caption = "Id_Categoria"
-        Me.GridColumnId_Orden.FieldName = "IdCategoria"
-        Me.GridColumnId_Orden.Name = "GridColumnId_Orden"
         '
         'NombreOrden
         '
@@ -411,13 +404,31 @@ Partial Class FrmMenu
         Me.GridCategoria.Visible = True
         Me.GridCategoria.VisibleIndex = 0
         '
+        'GridColumnId_Orden
+        '
+        Me.GridColumnId_Orden.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnId_Orden.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnId_Orden.Caption = "IdCategoria"
+        Me.GridColumnId_Orden.FieldName = "IdCategoria"
+        Me.GridColumnId_Orden.Name = "GridColumnId_Orden"
+        '
+        'GridColumnId_Categoria
+        '
+        Me.GridColumnId_Categoria.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.GridColumnId_Categoria.AppearanceHeader.Options.UseFont = True
+        Me.GridColumnId_Categoria.Caption = "Id Categoria"
+        Me.GridColumnId_Categoria.FieldName = "Id_Cat"
+        Me.GridColumnId_Categoria.Name = "GridColumnId_Categoria"
+        '
         'GridColumnTotal
         '
         Me.GridColumnTotal.AppearanceHeader.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
         Me.GridColumnTotal.AppearanceHeader.Options.UseFont = True
-        Me.GridColumnTotal.Caption = "Total"
+        Me.GridColumnTotal.Caption = "Total de Orden"
         Me.GridColumnTotal.FieldName = "Total"
         Me.GridColumnTotal.Name = "GridColumnTotal"
+        Me.GridColumnTotal.Visible = True
+        Me.GridColumnTotal.VisibleIndex = 1
         '
         'PanelControlOrden
         '
@@ -801,4 +812,5 @@ Partial Class FrmMenu
     Friend WithEvents GridColumn2IdReg_Cat As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId_Registro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumnId_Categoria As DevExpress.XtraGrid.Columns.GridColumn
 End Class

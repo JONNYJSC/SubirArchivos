@@ -55,10 +55,11 @@ Public Class FrmMenu
     End Sub
 
     Private Sub btnAgregarOrden_Click(sender As Object, e As EventArgs) Handles btnAgregarOrden.Click
-        If Trim(txtNombreCat.Text) = "" Then
+        If Trim(txtOrden.Text) = "" Then
             MsgBox("Llenar Campo Nombre Porfavor", MsgBoxStyle.Critical, "Operacion no valida")
         Else
             guardarOrdenCategoria()
+            txtOrden.Text = ""
         End If
     End Sub
 
@@ -67,7 +68,8 @@ Public Class FrmMenu
         Dim obj As New Entidades.EntUpload()
 
         obj.Orden = txtOrden.Text
-        obj.IdCategoriaOrden = 3
+        'Revisar IdCategoriaOrden
+        obj.IdCategoriaOrden = 1
         Logica.guardadoOrden(obj)
         If obj.result > 0 Then
             Me.Load_gridOrdenCat()
@@ -93,7 +95,8 @@ Public Class FrmMenu
         obj.nombre = txtRegistro.Text
         obj.fecha = saveUcnow
         obj.ruta = txtExaminar.Text
-        obj.IdOrdenRegistro = 3
+        'Guarda la orden con el registro 072821-01
+        obj.IdOrdenRegistro = 1
         Logica.guardadoRegistro(obj)
         If obj.result > 0 Then
             Me.Load_Registro()

@@ -418,8 +418,6 @@ Partial Class FrmMenu
         Me.GridColumnTotal.Caption = "Total"
         Me.GridColumnTotal.FieldName = "Total"
         Me.GridColumnTotal.Name = "GridColumnTotal"
-        Me.GridColumnTotal.Visible = True
-        Me.GridColumnTotal.VisibleIndex = 1
         '
         'PanelControlOrden
         '

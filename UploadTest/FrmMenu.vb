@@ -7,11 +7,26 @@ Public Class FrmMenu
     ' Me trae la fecha actual
     Dim saveUcnow As DateTime = DateTime.Now
 
+    ' Metodo para separa fecha
+    Function SystemDateTime() As String
+        Dim timeprint As String = Date.Now.ToLocalTime.ToString
+        Dim separar As String() = timeprint.Split("/")
+        Dim separar2 As String() = separar(2).Split(" ")
+        Dim separar3 As String() = separar2(1).Split(":")
+        Dim fechaSeparar As String = String.Format("{0}_{1}_{2}_{3}-{4}-{5}-{6}", separar(0), separar(1), separar2(0), separar3(0), separar3(1), separar3(2), separar2(2))
+        Return fechaSeparar
+    End Function
+    Dim FechaUsar As String = SystemDateTime()
+
     Private Sub FrmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Load_gridCat()
         Load_gridOrdenCat()
         Load_Registro()
-        lbFecha.Text = saveUcnow.ToString("dd/MM/yyyy")
+        'lbFecha.Text = saveUcnow.ToString("dd/MM/yyyy")
+        lbFecha.Text = SystemDateTime()
+        CbxCategoriaOrden.Properties.DataSource = Logica.listadoCategoria
+        CbxCategoriaOrden.Properties.DisplayMember = "Nombre_Categoria"
+        CbxCategoriaOrden.Properties.ValueMember = "Id_Categoria"
     End Sub
 
     'Listado Categoria
@@ -267,4 +282,5 @@ Public Class FrmMenu
         End Try
         Return ObtenCampoPorNombre(aNombreCampo, sqlDataRow)
     End Function
+
 End Class

@@ -10,13 +10,14 @@ Public Module UploadImagesDAL
         Dim datosTablaArchivos As DataTable
         Try
             Dim sqlda As SqlDataAdapter
-            Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarArchivos", cnn)
-            cmm.CommandType = CommandType.StoredProcedure
-            sqlda = New SqlDataAdapter(cmm)
-            datosTablaArchivos = New DataTable("tb_Archivo")
-            sqlda.Fill(datosTablaArchivos)
-            cmm.Parameters.Clear()
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                Dim cmm As New SqlCommand("SP_ListarArchivos", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                sqlda = New SqlDataAdapter(cmm)
+                datosTablaArchivos = New DataTable("tb_Archivo")
+                sqlda.Fill(datosTablaArchivos)
+                cmm.Parameters.Clear()
+            End Using
         Catch ex As Exception
             Throw ex
         End Try
@@ -106,13 +107,14 @@ Public Module UploadImagesDAL
         Dim datosTablaArchivos As DataTable
         Try
             Dim sqlda As SqlDataAdapter
-            Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarCategorias", cnn)
-            cmm.CommandType = CommandType.StoredProcedure
-            sqlda = New SqlDataAdapter(cmm)
-            datosTablaArchivos = New DataTable("tb_Categoria")
-            sqlda.Fill(datosTablaArchivos)
-            cmm.Parameters.Clear()
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                Dim cmm As New SqlCommand("SP_ListarCategorias", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                sqlda = New SqlDataAdapter(cmm)
+                datosTablaArchivos = New DataTable("tb_Categoria")
+                sqlda.Fill(datosTablaArchivos)
+                cmm.Parameters.Clear()
+            End Using
         Catch ex As Exception
             Throw ex
         End Try
@@ -141,14 +143,15 @@ Public Module UploadImagesDAL
         Dim datosTablaArchivos As DataTable
         Try
             Dim sqlda As SqlDataAdapter
-            Dim cnn = New SqlConnection(devServerConnectionStr)
-            'Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
-            Dim cmm As New SqlCommand("SP_ListarOrdenCategoria", cnn)
-            cmm.CommandType = CommandType.StoredProcedure
-            sqlda = New SqlDataAdapter(cmm)
-            datosTablaArchivos = New DataTable("tb_Orden")
-            sqlda.Fill(datosTablaArchivos)
-            cmm.Parameters.Clear()
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                'Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
+                Dim cmm As New SqlCommand("SP_ListarOrdenCategoria", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                sqlda = New SqlDataAdapter(cmm)
+                datosTablaArchivos = New DataTable("tb_Orden")
+                sqlda.Fill(datosTablaArchivos)
+                cmm.Parameters.Clear()
+            End Using
         Catch ex As Exception
             Throw ex
         End Try
@@ -159,14 +162,15 @@ Public Module UploadImagesDAL
         Dim datosTablaArchivos As DataTable
         Try
             Dim sqlda As SqlDataAdapter
-            Dim cnn = New SqlConnection(devServerConnectionStr)
-            'Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
-            Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
-            cmm.CommandType = CommandType.StoredProcedure
-            sqlda = New SqlDataAdapter(cmm)
-            datosTablaArchivos = New DataTable("tb_Registro2")
-            sqlda.Fill(datosTablaArchivos)
-            cmm.Parameters.Clear()
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                'Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
+                Dim cmm As New SqlCommand("SP_ListarRegistro", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                sqlda = New SqlDataAdapter(cmm)
+                datosTablaArchivos = New DataTable("tb_Registro2")
+                sqlda.Fill(datosTablaArchivos)
+                cmm.Parameters.Clear()
+            End Using
         Catch ex As Exception
             Throw ex
         End Try
@@ -203,14 +207,15 @@ Public Module UploadImagesDAL
         Dim datosTablaArchivos As DataTable
         Try
             Dim sqlda As SqlDataAdapter
-            Dim cnn = New SqlConnection(devServerConnectionStr)
-            Dim cmm As New SqlCommand("SP_ListarRegistroCategoria", cnn)
-            cmm.CommandType = CommandType.StoredProcedure
-            cmm.Parameters.AddWithValue("@BusqRegistCategoria", obj.IdOrdenRegistro)
-            sqlda = New SqlDataAdapter(cmm)
-            datosTablaArchivos = New DataTable("tb_Categoria")
-            sqlda.Fill(datosTablaArchivos)
-            cmm.Parameters.Clear()
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                Dim cmm As New SqlCommand("SP_ListarRegistroCategoria", cnn)
+                cmm.CommandType = CommandType.StoredProcedure
+                cmm.Parameters.AddWithValue("@BusqRegistCategoria", obj.IdOrdenRegistro)
+                sqlda = New SqlDataAdapter(cmm)
+                datosTablaArchivos = New DataTable("tb_Categoria")
+                sqlda.Fill(datosTablaArchivos)
+                cmm.Parameters.Clear()
+            End Using
         Catch ex As Exception
             Throw ex
         End Try

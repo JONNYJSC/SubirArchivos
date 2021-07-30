@@ -37,6 +37,19 @@ Public Class FrmMenu
 
     End Sub
 
+    'Probar metodo para seleccionar del comboboxEdit
+    'Private Sub CbxCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxCat.SelectedIndexChanged
+    '    If CbxCat.SelectedIndex > 0 Then
+    '        If CbxCat.EditValue <> "" Then
+    '            Dim newCbxCat As String = ""
+    '            newCbxCat = Logica.listadoCategoria2()
+    '            txtNewCbxCat.Text = newCbxCat
+    '        End If
+    '    Else
+    '        txtNewCbxCat.Text = ""
+    '    End If
+    'End Sub
+
     'Listado Categoria
     Sub Load_gridCat()
         GridControlListadoCat.DataSource = Logica.listadoCategoria

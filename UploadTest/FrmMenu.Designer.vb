@@ -445,7 +445,7 @@ Partial Class FrmMenu
         '
         'CbxCat
         '
-        Me.CbxCat.Location = New System.Drawing.Point(31, 75)
+        Me.CbxCat.Location = New System.Drawing.Point(31, 74)
         Me.CbxCat.MenuManager = Me.BarManager1
         Me.CbxCat.Name = "CbxCat"
         Me.CbxCat.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})

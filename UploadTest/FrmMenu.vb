@@ -32,23 +32,10 @@ Public Class FrmMenu
         CbxCat.Properties.Items.Add("")
         For Each cb As String In lista
             CbxCat.Properties.Items.Add(cb)
+            CbxCat.SelectedItem = Val(cb) 'Pasa el dato seleccionado y lo muestra como seleccionado
         Next
         CbxCat.SelectedIndex = 0
-
     End Sub
-
-    'Probar metodo para seleccionar del comboboxEdit
-    'Private Sub CbxCat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxCat.SelectedIndexChanged
-    '    If CbxCat.SelectedIndex > 0 Then
-    '        If CbxCat.EditValue <> "" Then
-    '            Dim newCbxCat As String = ""
-    '            newCbxCat = Logica.listadoCategoria2()
-    '            txtNewCbxCat.Text = newCbxCat
-    '        End If
-    '    Else
-    '        txtNewCbxCat.Text = ""
-    '    End If
-    'End Sub
 
     'Listado Categoria
     Sub Load_gridCat()

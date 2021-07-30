@@ -222,4 +222,27 @@ Public Module UploadImagesDAL
         Return datosTablaArchivos
     End Function
 
+    'Consulta para traer las categorias al comboboxEdit
+    Public Function cargarCategoria2() As List(Of String)
+        Dim list As New List(Of String)
+        Try
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                cnn.Open()
+                Dim query As String = String.Format("select Nombre_Categoria from tb_Categoria")
+                Dim cmd As New SqlCommand(query, cnn)
+                Dim rd As SqlDataReader
+                rd = cmd.ExecuteReader
+                If rd.HasRows Then
+                    While (rd.Read)
+                        list.Add(rd("Nombre_Categoria"))
+                    End While
+                End If
+                cnn.Close()
+            End Using
+        Catch ex As Exception
+
+        End Try
+        Return list
+    End Function
+
 End Module

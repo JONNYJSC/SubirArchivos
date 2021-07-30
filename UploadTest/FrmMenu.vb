@@ -24,9 +24,17 @@ Public Class FrmMenu
         Load_Registro()
         'lbFecha.Text = saveUcnow.ToString("dd/MM/yyyy")
         lbFecha.Text = SystemDateTime()
-        CbxCategoriaOrden.Properties.DataSource = Logica.listadoCategoria
-        CbxCategoriaOrden.Properties.DisplayMember = "Nombre_Categoria"
-        CbxCategoriaOrden.Properties.ValueMember = "Id_Categoria"
+
+        'Para traer lista de categorias por comboboxEdit Func
+        Dim lista As List(Of String)
+        lista = Logica.listadoCategoria2
+        CbxCat.Properties.Items.Clear()
+        CbxCat.Properties.Items.Add("")
+        For Each cb As String In lista
+            CbxCat.Properties.Items.Add(cb)
+        Next
+        CbxCat.SelectedIndex = 0
+
     End Sub
 
     'Listado Categoria

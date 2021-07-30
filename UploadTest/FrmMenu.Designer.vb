@@ -60,7 +60,7 @@ Partial Class FrmMenu
         Me.GridColumnId_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumnTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PanelControlOrden = New DevExpress.XtraEditors.PanelControl()
-        Me.CbxCategoriaOrden = New DevExpress.XtraEditors.LookUpEdit()
+        Me.CbxCat = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.LabelCateg = New System.Windows.Forms.Label()
         Me.btnAgregarOrden = New DevExpress.XtraEditors.SimpleButton()
         Me.txtOrden = New DevExpress.XtraEditors.TextEdit()
@@ -104,7 +104,7 @@ Partial Class FrmMenu
         CType(Me.GridViewListadoOrdenCat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControlOrden, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControlOrden.SuspendLayout()
-        CType(Me.CbxCategoriaOrden.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CbxCat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOrden.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabAgregarRegistro.SuspendLayout()
         CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -432,7 +432,7 @@ Partial Class FrmMenu
         '
         'PanelControlOrden
         '
-        Me.PanelControlOrden.Controls.Add(Me.CbxCategoriaOrden)
+        Me.PanelControlOrden.Controls.Add(Me.CbxCat)
         Me.PanelControlOrden.Controls.Add(Me.LabelCateg)
         Me.PanelControlOrden.Controls.Add(Me.btnAgregarOrden)
         Me.PanelControlOrden.Controls.Add(Me.txtOrden)
@@ -443,14 +443,14 @@ Partial Class FrmMenu
         Me.PanelControlOrden.Size = New System.Drawing.Size(459, 100)
         Me.PanelControlOrden.TabIndex = 1
         '
-        'CbxCategoriaOrden
+        'CbxCat
         '
-        Me.CbxCategoriaOrden.Location = New System.Drawing.Point(31, 73)
-        Me.CbxCategoriaOrden.MenuManager = Me.BarManager1
-        Me.CbxCategoriaOrden.Name = "CbxCategoriaOrden"
-        Me.CbxCategoriaOrden.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CbxCategoriaOrden.Size = New System.Drawing.Size(185, 20)
-        Me.CbxCategoriaOrden.TabIndex = 6
+        Me.CbxCat.Location = New System.Drawing.Point(31, 75)
+        Me.CbxCat.MenuManager = Me.BarManager1
+        Me.CbxCat.Name = "CbxCat"
+        Me.CbxCat.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.CbxCat.Size = New System.Drawing.Size(185, 20)
+        Me.CbxCat.TabIndex = 7
         '
         'LabelCateg
         '
@@ -733,7 +733,7 @@ Partial Class FrmMenu
         CType(Me.PanelControlOrden, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControlOrden.ResumeLayout(False)
         Me.PanelControlOrden.PerformLayout()
-        CType(Me.CbxCategoriaOrden.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CbxCat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOrden.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabAgregarRegistro.ResumeLayout(False)
         CType(Me.GridControlListadoRegistro, System.ComponentModel.ISupportInitialize).EndInit()
@@ -785,7 +785,6 @@ Partial Class FrmMenu
     Friend WithEvents Label1 As Label
     Friend WithEvents SkinBarSubItem2 As DevExpress.XtraBars.SkinBarSubItem
     Friend WithEvents LabelCateg As Label
-    Friend WithEvents CbxCategoriaOrden As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents GridControlListadoCat As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridViewCategoria As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumntb_Categoria As DevExpress.XtraGrid.Columns.GridColumn
@@ -813,4 +812,5 @@ Partial Class FrmMenu
     Friend WithEvents GridColumnTotal As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId_Registro As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId_Categoria As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents CbxCat As DevExpress.XtraEditors.ComboBoxEdit
 End Class

@@ -26,15 +26,35 @@ Public Class FrmMenu
         lbFecha.Text = SystemDateTime()
 
         'Para traer lista de categorias por comboboxEdit Func
+        combCategoria()
+        'Para traer lista de Orden por comboboxEdit Func
+        combOrden()
+    End Sub
+
+    Sub combCategoria()
+        'Para traer lista de categorias por comboboxEdit Func
         Dim lista As List(Of String)
         lista = Logica.listadoCategoria2
         CbxCat.Properties.Items.Clear()
         CbxCat.Properties.Items.Add("")
-        For Each cb As String In lista
-            CbxCat.Properties.Items.Add(cb)
-            CbxCat.SelectedItem = Val(cb) 'Pasa el dato seleccionado y lo muestra como seleccionado
+        For Each cbCat As String In lista
+            CbxCat.Properties.Items.Add(cbCat)
+            CbxCat.SelectedItem = Val(cbCat) 'Pasa el dato seleccionado y lo muestra como seleccionado
         Next
         CbxCat.SelectedIndex = 0
+    End Sub
+
+    Sub combOrden()
+        'Para traer lista de orden por comboboxEdit Func
+        Dim lista As List(Of String)
+        lista = Logica.listadoOrden2
+        CbxOrdenRegistro.Properties.Items.Clear()
+        CbxOrdenRegistro.Properties.Items.Add("")
+        For Each cbOrden As String In lista
+            CbxOrdenRegistro.Properties.Items.Add(cbOrden)
+            CbxOrdenRegistro.SelectedItem = Val(cbOrden) 'Pasa el dato seleccionado y lo muestra como seleccionado
+        Next
+        CbxOrdenRegistro.SelectedIndex = 0
     End Sub
 
     'Listado Categoria
@@ -92,7 +112,7 @@ Public Class FrmMenu
 
         obj.Orden = txtOrden.Text
         'Revisar IdCategoriaOrden
-        obj.IdCategoriaOrden = 1
+        obj.IdCategoriaOrden = CbxCat.SelectedIndex
         Logica.guardadoOrden(obj)
         If obj.result > 0 Then
             Me.Load_gridOrdenCat()
@@ -120,7 +140,7 @@ Public Class FrmMenu
         obj.fecha = saveUcnow
         obj.ruta = txtExaminar.Text
         'Guarda la orden con el registro 072821-01
-        obj.IdOrdenRegistro = 1
+        obj.IdOrdenRegistro = CbxOrdenRegistro.SelectedIndex
         Logica.guardadoRegistro(obj)
         If obj.result > 0 Then
             Me.Load_Registro()

@@ -177,6 +177,7 @@ Public Module UploadImagesDAL
         Return datosTablaArchivos
     End Function
 
+    'Nota importante cambiar la tabla resgitro2 agregar idOrden y quitar idcategoria
     Public Function guardarRegistro(obj As Entidades.EntUpload) As Entidades.EntUpload
         Try
             Dim ruta As New FileStream(obj.ruta, FileMode.Open, FileAccess.Read)
@@ -235,6 +236,29 @@ Public Module UploadImagesDAL
                 If rd.HasRows Then
                     While (rd.Read)
                         list.Add(rd("Nombre_Categoria"))
+                    End While
+                End If
+                cnn.Close()
+            End Using
+        Catch ex As Exception
+
+        End Try
+        Return list
+    End Function
+
+    'Consulta para traer las orden al comboboxEdit
+    Public Function cargarOrden2() As List(Of String)
+        Dim list As New List(Of String)
+        Try
+            Using cnn = New SqlConnection(devServerConnectionStr)
+                cnn.Open()
+                Dim query As String = String.Format("select Nombre_Orden from tb_Orden")
+                Dim cmd As New SqlCommand(query, cnn)
+                Dim rd As SqlDataReader
+                rd = cmd.ExecuteReader
+                If rd.HasRows Then
+                    While (rd.Read)
+                        list.Add(rd("Nombre_Orden"))
                     End While
                 End If
                 cnn.Close()

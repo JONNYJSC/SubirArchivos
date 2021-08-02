@@ -54,4 +54,9 @@ Public Module UploadImagesBIL
         Return UploadImagesDAL.cargarCategoria2
     End Function
 
+    'Logica para traer datos al ComboboxEdit
+    Public Function listadoOrden2() As List(Of String)
+        Return UploadImagesDAL.cargarOrden2
+    End Function
+
 End Module

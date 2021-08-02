@@ -87,6 +87,8 @@ Partial Class FrmMenu
         Me.GridColumn1Id_Categoria = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2IdReg_Cat = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
+        Me.CbxOrdenRegistro = New DevExpress.XtraEditors.ComboBoxEdit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +117,7 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CbxOrdenRegistro.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -541,6 +544,8 @@ Partial Class FrmMenu
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.CbxOrdenRegistro)
+        Me.PanelControl1.Controls.Add(Me.LabelControl3)
         Me.PanelControl1.Controls.Add(Me.lbFecha)
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
         Me.PanelControl1.Controls.Add(Me.btnAgregarRegistro)
@@ -601,7 +606,7 @@ Partial Class FrmMenu
         Me.btnExaminar.Appearance.Options.UseFont = True
         Me.btnExaminar.Image = CType(resources.GetObject("btnExaminar.Image"), System.Drawing.Image)
         Me.btnExaminar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
-        Me.btnExaminar.Location = New System.Drawing.Point(16, 89)
+        Me.btnExaminar.Location = New System.Drawing.Point(16, 107)
         Me.btnExaminar.Name = "btnExaminar"
         Me.btnExaminar.Size = New System.Drawing.Size(121, 30)
         Me.btnExaminar.TabIndex = 5
@@ -618,7 +623,7 @@ Partial Class FrmMenu
         'txtExaminar
         '
         Me.txtExaminar.Enabled = False
-        Me.txtExaminar.Location = New System.Drawing.Point(143, 95)
+        Me.txtExaminar.Location = New System.Drawing.Point(143, 113)
         Me.txtExaminar.MenuManager = Me.BarManager1
         Me.txtExaminar.Name = "txtExaminar"
         Me.txtExaminar.Size = New System.Drawing.Size(300, 20)
@@ -700,6 +705,24 @@ Partial Class FrmMenu
         Me.WorkspaceManager1.TargetControl = Me
         Me.WorkspaceManager1.TransitionType = PushTransition1
         '
+        'LabelControl3
+        '
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Location = New System.Drawing.Point(27, 77)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.LabelControl3.Size = New System.Drawing.Size(47, 19)
+        Me.LabelControl3.TabIndex = 10
+        Me.LabelControl3.Text = "Orden:"
+        '
+        'CbxOrdenRegistro
+        '
+        Me.CbxOrdenRegistro.Location = New System.Drawing.Point(143, 79)
+        Me.CbxOrdenRegistro.MenuManager = Me.BarManager1
+        Me.CbxOrdenRegistro.Name = "CbxOrdenRegistro"
+        Me.CbxOrdenRegistro.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.CbxOrdenRegistro.Size = New System.Drawing.Size(217, 20)
+        Me.CbxOrdenRegistro.TabIndex = 11
+        '
         'FrmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -745,6 +768,7 @@ Partial Class FrmMenu
         CType(Me.txtExaminar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControlRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewRegistro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CbxOrdenRegistro.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -813,4 +837,6 @@ Partial Class FrmMenu
     Friend WithEvents GridColumnId_Registro As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumnId_Categoria As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents CbxCat As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents CbxOrdenRegistro As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
 End Class
